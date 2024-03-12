@@ -7,7 +7,6 @@ export const textVariants = cva('text', {
 			lead: 'text-xl font-normal',
 			large: 'text-lg font-semibold',
 			paragraph: 'text-base font-medium leading-7',
-			link: 'text-base font-medium leading-7 text-royal-blue-600 transition-all hover:underline',
 			small: 'text-sm font-medium leading-[14px]',
 			subtitle: 'text-sm font-medium leading-[14px] text-fiord-500'
 		}

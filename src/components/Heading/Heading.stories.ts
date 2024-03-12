@@ -1,6 +1,6 @@
 import Heading from './TheHeading.vue'
 
-const meta: Meta<typeof Heading> = {
+const meta = {
 	component: Heading,
 	title: 'Typography/Heading',
 	tags: ['autodocs'],
@@ -17,7 +17,7 @@ const meta: Meta<typeof Heading> = {
 			options: ['large', 'medium', 'small', 'tiny']
 		}
 	}
-}
+} satisfies Meta<typeof Heading>
 
 const Template = (args: unknown) => ({
 	components: { Heading },

@@ -1,6 +1,6 @@
 import Text from './TheText.vue'
 
-const meta: Meta<typeof Text> = {
+const meta = {
 	component: Text,
 	title: 'Typography/Text',
 	tags: ['autodocs'],
@@ -14,10 +14,10 @@ const meta: Meta<typeof Text> = {
 			control: 'radio',
 			description: 'Text type',
 			defaultValue: 'paragraph',
-			options: ['lead', 'large', 'paragraph', 'link', 'small', 'subtitle']
+			options: ['lead', 'large', 'paragraph', 'small', 'subtitle']
 		}
 	}
-}
+} satisfies Meta<typeof Text>
 
 const Template = (args: unknown) => ({
 	components: { Text },
@@ -31,13 +31,6 @@ export const Default = Template.bind({})
 Default.args = {
 	size: 'paragraph',
 	default: 'This is the paragraph'
-}
-
-export const Link = Template.bind({})
-Link.args = {
-	type: 'link',
-	default: 'This is the link',
-	href: '#'
 }
 
 export default meta
