@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"target": "ES2020",
+		"useDefineForClassFields": true,
+		"module": "ESNext",
+		"lib": ["ES2020", "DOM", "DOM.Iterable"],
+		"skipLibCheck": true,
+		"moduleResolution": "bundler",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"jsx": "preserve",
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"outDir": "dist",
+		"declaration": false,
+		"baseUrl": "."
+	},
+	"include": ["src/**/*.ts", "src/**/*.vue"],
+	"references": [{ "path": "./tsconfig.node.json" }],
+	"exclude": ["src/App.vue", "src/main.ts"]
+}
