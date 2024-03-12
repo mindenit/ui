@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import { HTMLAttributes } from 'vue'
 
-export const titleVariants = cva('title', {
+export const headingVariants = cva('Heading', {
 	variants: {
 		size: {
 			large: 'tracking-[1.2%]; text-5xl font-extrabold leading-[3rem]',
@@ -15,11 +15,11 @@ export const titleVariants = cva('title', {
 	}
 })
 
-type TitleVariants = VariantProps<typeof titleVariants>
+type HeadingVariants = VariantProps<typeof headingVariants>
 
-export interface TitleProps {
-	size: TitleVariants['size']
+export interface HeadingProps {
+	size: HeadingVariants['size']
 	class: HTMLAttributes['class']
 }
 
-export { default as Title } from './TheTitle.vue'
+export { default as Heading } from './TheHeading.vue'

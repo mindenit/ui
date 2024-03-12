@@ -1,2 +1,3 @@
 export * from './Form'
-export * from './Title'
+export * from './Heading'
+export * from './Text'

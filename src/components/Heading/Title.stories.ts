@@ -1,8 +1,8 @@
-import Title from './TheTitle.vue'
+import Heading from './TheHeading.vue'
 
-const meta: Meta<typeof Title> = {
-	component: Title,
-	title: 'Typography/Title',
+const meta: Meta<typeof Heading> = {
+	component: Heading,
+	title: 'Typography/Heading',
 	tags: ['autodocs'],
 	argTypes: {
 		default: {
@@ -20,11 +20,11 @@ const meta: Meta<typeof Title> = {
 }
 
 const Template = (args: unknown) => ({
-	components: { Title },
+	components: { Heading },
 	setup() {
 		return { args }
 	},
-	template: `<Title v-bind="args">{{ args.default }}</Title>`
+	template: `<Heading v-bind="args">{{ args.default }}</Heading>`
 })
 
 export const Default = Template.bind({})

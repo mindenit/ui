@@ -1,7 +1,7 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import { HTMLAttributes } from 'vue'
 
-export const textVariants = cva('title', {
+export const textVariants = cva('text', {
 	variants: {
 		type: {
 			lead: 'text-xl font-normal',
