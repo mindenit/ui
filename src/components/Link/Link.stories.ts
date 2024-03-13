@@ -1,4 +1,6 @@
+import type { Meta, StoryFn } from '@storybook/vue3'
 import Link from './TheLink.vue'
+import { type LinkPropsWithHref } from '.'
 
 const meta = {
 	component: Link,
@@ -7,7 +9,7 @@ const meta = {
 	argTypes: {
 		default: {
 			control: 'text',
-			description: 'Slot content',
+			description: 'Text in link',
 			defaultValue: 'This is the link'
 		},
 		asChild: {
@@ -18,7 +20,7 @@ const meta = {
 	}
 } satisfies Meta<typeof Link>
 
-const Template = (args: unknown) => ({
+const Template: StoryFn<LinkPropsWithHref> = (args: unknown) => ({
 	components: { Link },
 	setup() {
 		return { args }

@@ -1,3 +1,4 @@
+import type { Meta, StoryFn } from '@storybook/vue3'
 import Heading from './TheHeading.vue'
 
 const meta = {
@@ -19,7 +20,7 @@ const meta = {
 	}
 } satisfies Meta<typeof Heading>
 
-const Template = (args: unknown) => ({
+const Template: StoryFn<typeof Heading> = (args: unknown) => ({
 	components: { Heading },
 	setup() {
 		return { args }
@@ -27,9 +28,27 @@ const Template = (args: unknown) => ({
 	template: `<Heading v-bind="args">{{ args.default }}</Heading>`
 })
 
-export const Default = Template.bind({})
-Default.args = {
+export const Large = Template.bind({})
+Large.args = {
 	size: 'large',
+	default: 'This is the title'
+}
+
+export const Medium = Template.bind({})
+Medium.args = {
+	size: 'medium',
+	default: 'This is the title'
+}
+
+export const Small = Template.bind({})
+Small.args = {
+	size: 'small',
+	default: 'This is the title'
+}
+
+export const Tiny = Template.bind({})
+Tiny.args = {
+	size: 'tiny',
 	default: 'This is the title'
 }
 
