@@ -1,10 +1,10 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import { HTMLAttributes } from 'vue'
 
-export const headingVariants = cva('Heading', {
+export const headingVariants = cva('text-black dark:text-white', {
 	variants: {
 		size: {
-			large: 'tracking-[1.2%]; text-5xl font-extrabold leading-[3rem]',
+			large: 'text-5xl font-extrabold leading-[3rem] tracking-[1.2%]',
 			medium: 'text-3xl font-semibold tracking-[0.75%]',
 			small: 'text-2xl font-semibold tracking-[0.8%]',
 			tiny: 'text-xl font-semibold tracking-[0.5%]'

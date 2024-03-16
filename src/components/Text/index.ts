@@ -1,14 +1,14 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import { HTMLAttributes } from 'vue'
 
-export const textVariants = cva('text', {
+export const textVariants = cva('', {
 	variants: {
 		type: {
-			lead: 'text-xl font-normal',
-			large: 'text-lg font-semibold',
-			paragraph: 'text-base font-medium leading-7',
-			small: 'text-sm font-medium leading-[14px]',
-			subtitle: 'text-sm font-medium leading-[14px] text-fiord-500'
+			lead: 'text-xl font-normal leading-7 dark:text-white',
+			large: 'text-lg font-semibold leading-7 dark:text-white',
+			paragraph: 'font-regular text-base leading-7 dark:text-white',
+			small: 'text-sm font-medium leading-[14px] dark:text-white',
+			subtitle: 'text-sm font-medium leading-[14px] text-fiord-500 dark:text-fiord-400'
 		}
 	},
 	defaultVariants: {
