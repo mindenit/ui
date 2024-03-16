@@ -1,4 +1,4 @@
-name: Build and Publish Storybook to GitHub Pages
+name: Build and Publish storybook to GitHub Pages
 
 on:
   push:
@@ -12,6 +12,9 @@ permissions:
 
 jobs:
   deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.build-publish.outputs.page_url }}
     runs-on: ubuntu-latest
 
     steps:
@@ -34,7 +37,7 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.1
+      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.2
         with:
           install_command: pnpm install
           build_command: pnpm build-storybook
