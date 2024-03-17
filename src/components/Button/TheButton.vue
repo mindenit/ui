@@ -11,7 +11,7 @@ const props = withDefaults(defineProps<ButtonProps>(), { asChild: false })
 		v-bind="$props"
 		as="button"
 		:as-child="asChild"
-		:class="cn(buttonVariants({ variant }), props.class)"
+		:class="cn(buttonVariants({ variant, appearance }), props.class)"
 	>
 		<slot></slot>
 	</Primitive>
