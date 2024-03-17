@@ -15,9 +15,9 @@ describe('Button component', () => {
 
 		expect(wrapper.element.tagName).toBe('BUTTON')
 	})
-	it('renders a icon button', () => {
+	it('renders an icon button', () => {
 		buildWrapper({
-			props: { variant: 'primary', appearence: 'default' },
+			props: { variant: 'primary', appearence: 'icon' },
 			slots: { default: '<Icon icon="ph:plus" />' },
 			global: {
 				components: { Icon }

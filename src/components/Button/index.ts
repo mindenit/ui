@@ -35,7 +35,7 @@ export interface ButtonProps {
 	 * Change the visual style of button
 	 */
 	variant?: ButtonVariants['variant']
-	appearance: ButtonVariants['appearance']
+	appearance?: ButtonVariants['appearance']
 	class?: HTMLAttributes['class']
 	/**
 	 * Change the default rendered element for the one passed as a child, merging their props and behavior
