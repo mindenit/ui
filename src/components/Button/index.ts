@@ -3,7 +3,6 @@ import { HTMLAttributes } from 'vue'
 
 export const buttonVariants = cva(
 	'font-regular box-border inline-flex items-center justify-center gap-2 rounded-lg text-sm tracking-wide outline-none transition-all active:shadow-inner active:shadow-fiord-950/15 disabled:cursor-not-allowed disabled:shadow-none [&_svg]:size-5',
-	// 'font-regular box-border inline-flex h-10 w-auto min-w-32 items-center justify-center gap-2 rounded-lg px-4 text-sm tracking-wide outline-none transition-all active:shadow-inner active:shadow-fiord-950/15 disabled:cursor-not-allowed disabled:shadow-none [&_svg]:size-5',
 	{
 		variants: {
 			variant: {
