@@ -25,6 +25,12 @@ const meta = {
 			options: ['primary', 'outlined', 'danger', 'ghost'],
 			defaultValue: 'primary'
 		},
+		appearance: {
+			name: 'appearance',
+			control: 'radio',
+			options: ['default', 'icon'],
+			defaultValue: 'default'
+		},
 		class: {
 			control: 'text',
 			table: {
@@ -108,6 +114,21 @@ export const WithIcon: Story = {
 			default: {
 				components: { Icon },
 				template: '<Icon icon="ph:plus" /> Add to bag'
+			}
+		}
+	}
+}
+
+export const IconButton: Story = {
+	args: {
+		variant: 'primary',
+		appearance: 'icon'
+	},
+	parameters: {
+		slots: {
+			default: {
+				components: { Icon },
+				template: '<Icon icon="ph:plus" />'
 			}
 		}
 	}

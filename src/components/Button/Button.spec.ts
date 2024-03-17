@@ -16,6 +16,28 @@ describe('Button component', () => {
 		expect(wrapper.element.tagName).toBe('BUTTON')
 	})
 
+	describe('icon button', () => {
+		beforeEach(() => {
+			buildWrapper({
+				props: { variant: 'primary', appearance: 'icon' },
+				slots: { default: '<Icon icon="ph:plus" />' },
+				global: {
+					components: { Icon }
+				}
+			})
+		})
+
+		it('should have classes of the icon button', () => {
+			expect(wrapper.element.classList.contains('size-10')).toBe(true)
+		})
+
+		it('should have an icon in slot', () => {
+			const icon = wrapper.findComponent(Icon)
+
+			expect(icon.exists()).toBe(true)
+		})
+	})
+
 	describe('asChild button', () => {
 		beforeEach(() => {
 			buildWrapper({
@@ -29,7 +51,7 @@ describe('Button component', () => {
 		})
 
 		it('should have classes of the button', () => {
-			expect(wrapper.element.classList).toContain('bg-royal-blue-500')
+			expect(wrapper.element.classList.contains('bg-royal-blue-500')).toBe(true)
 		})
 	})
 
@@ -44,10 +66,14 @@ describe('Button component', () => {
 			})
 		})
 
-		it('should have an icon', () => {
-			const button = wrapper.findComponent('BUTTON')
+		it('should have an icon in slot', () => {
+			const icon = wrapper.findComponent(Icon)
 
-			expect(button)
+			expect(icon.exists()).toBe(true)
+		})
+
+		it('should have classes of the button', () => {
+			expect(wrapper.element.classList.contains('h-10 w-auto min-w-32 px-4'))
 		})
 	})
 })
