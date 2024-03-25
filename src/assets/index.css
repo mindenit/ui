@@ -8,6 +8,10 @@ body {
 	@apply bg-fiord-100 font-inter accent-royal-blue-500 dark:bg-fiord-950;
 }
 
+svg {
+	@apply select-none;
+}
+
 h1::selection,
 h2::selection,
 h3::selection,
@@ -15,6 +19,7 @@ h4::selection,
 h5::selection,
 h6::selection,
 p::selection,
-a::selection {
+a::selection,
+label::selection {
 	@apply bg-royal-blue-200 dark:bg-royal-blue-900;
 }
