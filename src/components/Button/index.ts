@@ -7,13 +7,13 @@ export const buttonVariants = cva(
 		variants: {
 			variant: {
 				primary:
-					'bg-royal-blue-500 text-white hover:shadow-md hover:shadow-royal-blue-500/40 focus:shadow-[0_0_0_4px] focus:shadow-royal-blue-500/40 active:bg-royal-blue-600 disabled:bg-royal-blue-200 disabled:text-royal-blue-600 dark:disabled:bg-royal-blue-950 dark:disabled:text-royal-blue-300',
+					'bg-royal-blue-500 text-white hover:shadow-md hover:shadow-royal-blue-500/40 focus:ring focus:ring-royal-blue-500/40 active:bg-royal-blue-600 disabled:bg-royal-blue-200 disabled:text-royal-blue-600 dark:disabled:bg-royal-blue-950 dark:disabled:text-royal-blue-300',
 				outlined:
-					'border-2 border-fiord-400 bg-fiord-50 text-fiord-700 hover:bg-fiord-100 hover:shadow-md hover:shadow-fiord-950/10 focus:shadow-[0_0_0_4px] focus:shadow-royal-blue-500/40 disabled:shadow-none dark:border-fiord-600 dark:bg-fiord-950 dark:text-fiord-300 dark:hover:border-fiord-500 dark:hover:bg-fiord-800 dark:hover:text-white dark:active:shadow-fiord-50/15 disabled:dark:border-none dark:disabled:bg-fiord-800 dark:disabled:text-fiord-400',
+					'border-2 border-fiord-400 bg-fiord-50 text-fiord-700 hover:bg-fiord-100 hover:shadow-md hover:shadow-fiord-950/10 focus:ring focus:ring-royal-blue-500/40 disabled:shadow-none dark:border-fiord-600 dark:bg-fiord-950 dark:text-fiord-300 dark:hover:border-fiord-500 dark:hover:bg-fiord-800 dark:hover:text-white dark:active:shadow-fiord-50/15 disabled:dark:border-none dark:disabled:bg-fiord-800 dark:disabled:text-fiord-400',
 				danger:
-					'dark:disabled:textamaranth-400 bg-amaranth-500 text-white hover:shadow-md hover:shadow-amaranth-500/40 focus:shadow-[0_0_0_4px] focus:shadow-amaranth-500/40 active:bg-amaranth-600 active:shadow-inner active:shadow-fiord-950/15 disabled:bg-amaranth-300 disabled:text-amaranth-300 dark:disabled:bg-amaranth-950',
+					'dark:disabled:textamaranth-400 bg-amaranth-500 text-white hover:shadow-md hover:shadow-amaranth-500/40 focus:ring focus:ring-amaranth-500/40 active:bg-amaranth-600 active:shadow-inner active:shadow-fiord-950/15 disabled:bg-amaranth-300 disabled:text-amaranth-300 dark:disabled:bg-amaranth-950',
 				ghost:
-					'bg-transparent text-black hover:bg-fiord-200 focus:shadow-[0_0_0_4px] focus:shadow-royal-blue-500/40 disabled:bg-transparent disabled:text-fiord-500 dark:text-white dark:hover:bg-fiord-800 dark:active:shadow-fiord-50/15 dark:disabled:bg-transparent dark:disabled:text-fiord-400'
+					'bg-transparent text-black hover:bg-fiord-200 focus:ring focus:ring-royal-blue-500/40 disabled:bg-transparent disabled:text-fiord-500 dark:text-white dark:hover:bg-fiord-800 dark:active:shadow-fiord-50/15 dark:disabled:bg-transparent dark:disabled:text-fiord-400'
 			},
 			appearance: {
 				default: 'h-10 w-auto min-w-32 px-4',
