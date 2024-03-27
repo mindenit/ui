@@ -37,7 +37,7 @@ jobs:
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
-      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.2
+      - uses: bitovi/github-actions-storybook-to-github-pages@v1.0.3
         with:
           install_command: pnpm install
           build_command: pnpm build-storybook
