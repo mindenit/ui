@@ -11,8 +11,7 @@ const meta = {
 			table: {
 				type: { summary: 'string' },
 				defaultValue: ''
-			},
-			modelValue: { control: { type: 'boolean' } }
+			}
 		}
 	}
 } satisfies Meta<typeof Switch>
@@ -29,6 +28,5 @@ const Template: StoryFn<typeof Switch> = (args: unknown) => ({
 
 export const Default = Template.bind({})
 Default.args = {
-	id: 'switch1',
-	modelValue: false
+	id: 'switch1'
 }

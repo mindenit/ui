@@ -1,4 +1,5 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
+import RadioItem from '../RadioItem/RadioItem.vue'
 import RadioGroup from './RadioGroup.vue'
 
 const meta = {
@@ -19,19 +20,18 @@ const meta = {
 export default meta
 
 const Template: StoryFn<typeof RadioGroup> = (args: unknown) => ({
-	components: { RadioGroup },
+	components: { RadioGroup, RadioItem },
 	setup() {
 		return { args }
 	},
-	template: `<RadioGroup v-bind="args" />`
+	template: `<RadioGroup v-bind="args">
+		<RadioItem value='option1' label='Option 1' />
+		<RadioItem value='option2' label='Option 2' />
+		<RadioItem value='option3' label='Option 3' />
+	</RadioGroup>`
 })
 
 export const Default = Template.bind({})
 Default.args = {
-	modelValue: 'default',
-	options: [
-		{ id: 'r1', value: 'default', label: 'Default' },
-		{ id: 'r2', value: 'comfortable', label: 'Comfortable' },
-		{ id: 'r3', value: 'compact', label: 'Compact' }
-	]
+	defaultValue: 'option1'
 }
