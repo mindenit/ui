@@ -20,8 +20,8 @@ const props = defineProps<RadioItemProps>()
 				class="relative flex size-full items-center justify-center after:block after:size-[10px] after:rounded-[50%] after:bg-white after:content-['']"
 			/>
 		</RadioGroupItem>
-		<label v-if="label" class="pl-[15px] text-[15px] leading-none dark:text-white">{{
-			label
-		}}</label>
+		<label v-if="label" class="pl-[15px] text-[15px] leading-none dark:text-white">
+			{{ label }}
+		</label>
 	</div>
 </template>

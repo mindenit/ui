@@ -1,6 +1,6 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
-import RadioItem from '../RadioItem/RadioItem.vue'
 import RadioGroup from './RadioGroup.vue'
+import RadioItem from './RadioItem.vue'
 
 const meta = {
 	component: RadioGroup,
