@@ -26,4 +26,4 @@ const Template: StoryFn<typeof Checkbox> = (args: unknown) => ({
 	template: `<Checkbox v-bind="args" />`
 })
 
-export const Box = Template.bind({})
+export const Default = Template.bind({})
