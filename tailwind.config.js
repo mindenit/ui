@@ -52,6 +52,20 @@ export default {
 			},
 			fontFamily: {
 				inter: ['Inter', 'sans-serif']
+			},
+			keyframes: {
+				fadeIn: {
+					from: { opacity: 0 },
+					to: { opacity: 1 }
+				},
+				fadeOut: {
+					from: { opacity: 1 },
+					to: { opacity: 0 }
+				}
+			},
+			animation: {
+				fadeIn: 'fadeIn 247ms ease-out',
+				fadeOut: 'fadeOut 247ms ease-in'
 			}
 		}
 	},
