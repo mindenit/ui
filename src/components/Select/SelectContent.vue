@@ -13,11 +13,11 @@ const forwarded = useForwardPropsEmits(props, emits)
 	<SelectPortal>
 		<SelectContent
 			v-bind="forwarded"
-			:side-offset="16"
-			align="start"
-			class="mt-2 flex min-w-32 flex-col gap-2 rounded-lg border border-fiord-400 px-3 py-5 text-sm font-medium leading-[14px] shadow-[0px_4px_7px_0px_#00000066] dark:border-fiord-700"
+			:side-offset="5"
+			position="item-aligned"
+			class="mt-1 flex min-w-32 flex-col gap-2 rounded-lg border border-fiord-400 p-2 text-sm font-medium leading-[14px] shadow-md shadow-fiord-950/15 transition-all data-[state=closed]:animate-fadeOut data-[state=open]:animate-fadeIn dark:border-fiord-700"
 		>
-			<slot />
+			<slot></slot>
 		</SelectContent>
 	</SelectPortal>
 </template>
