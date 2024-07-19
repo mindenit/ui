@@ -2,7 +2,7 @@ import { VariantProps, cva } from 'class-variance-authority'
 import { HTMLAttributes } from 'vue'
 
 export const textFieldVariants = cva(
-	'box-border inline-flex h-10 w-full min-w-48 items-stretch rounded-lg border-2 pl-2 pr-1 text-start has-[input:focus]:ring',
+	'box-border inline-flex h-10 w-full min-w-48 items-stretch gap-2 rounded-lg border-2 pl-2 pr-1 text-start has-[input:focus]:ring',
 	{
 		variants: {
 			variant: {

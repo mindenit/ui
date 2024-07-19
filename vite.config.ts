@@ -13,9 +13,6 @@ export default defineConfig({
 		root: fileURLToPath(new URL('./', import.meta.url)),
 		globals: false
 	},
-	optimizeDeps: {
-		exclude: ['radix-vue']
-	},
 	build: {
 		lib: {
 			entry: resolve(__dirname, 'src/index.ts'),
