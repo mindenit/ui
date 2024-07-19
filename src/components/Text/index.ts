@@ -20,7 +20,7 @@ type TextVariants = VariantProps<typeof textVariants>
 
 export interface TextProps {
 	type: TextVariants['type']
-	class: HTMLAttributes['class']
+	class?: HTMLAttributes['class']
 }
 
 export { default as Text } from './TheText.vue'

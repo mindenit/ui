@@ -14,7 +14,7 @@
 		"noUnusedParameters": true,
 		"noFallthroughCasesInSwitch": true,
 		"outDir": "dist",
-		"declaration": false,
+		"declaration": true,
 		"baseUrl": ".",
 		"paths": {
 			"@/*": ["./src/*"]
