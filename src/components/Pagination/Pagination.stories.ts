@@ -1,5 +1,5 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/vue3'
-import { Pagination, PaginationProps } from '.'
+import { Pagination } from '.'
 
 const meta = {
 	title: 'Base/Pagination',
@@ -9,7 +9,7 @@ const meta = {
 
 export default meta
 
-const Template: StoryFn<PaginationProps> = (args: unknown) => ({
+const Template: StoryFn<typeof Pagination> = (args: unknown) => ({
 	components: { Pagination },
 	setup() {
 		return { args }
@@ -17,7 +17,7 @@ const Template: StoryFn<PaginationProps> = (args: unknown) => ({
 	template: `<Pagination v-bind="args" />`
 })
 
-type Story = StoryObj<PaginationProps>
+type Story = StoryObj<typeof Pagination>
 
 export const Default: Story = Template.bind({})
 Default.args = {
