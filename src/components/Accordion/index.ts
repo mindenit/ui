@@ -1,2 +1,2 @@
 export { default as AccordionItem } from './AccordionItem.vue'
-export { default as Accordion } from './TheAccordion.vue'
+export { default as AccordionRoot } from './AccordionRoot.vue'

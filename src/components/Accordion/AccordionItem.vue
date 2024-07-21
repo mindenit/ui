@@ -5,26 +5,27 @@ import {
 	AccordionContent,
 	AccordionHeader,
 	AccordionTrigger,
-	AccordionItem as RadixAccordionItem
+	AccordionItem as RadixAccordionItem,
+	useForwardProps
 } from 'radix-vue'
 
 const props = defineProps<AccordionItemProps>()
+const forwarded = useForwardProps(props)
 </script>
 
 <template>
 	<RadixAccordionItem
-		v-bind="props"
-		class="mt-[10px] overflow-hidden rounded-lg border border-fiord-200 text-sm first:mt-0 dark:border-fiord-800"
+		v-bind="forwarded"
+		class="overflow-hidden rounded-lg border border-fiord-200 text-sm dark:border-fiord-800"
 	>
 		<AccordionHeader class="flex">
 			<AccordionTrigger
-				class="flex h-[48px] flex-1 cursor-pointer items-center justify-between bg-white px-[14px] font-medium outline-none transition-all hover:bg-fiord-200 data-[state=open]:bg-fiord-200 dark:bg-fiord-900 dark:text-white dark:hover:bg-fiord-800 dark:data-[state=open]:bg-fiord-800"
+				class="group flex h-[48px] flex-1 cursor-pointer items-center justify-between bg-white px-[14px] font-medium outline-none transition-all hover:bg-fiord-200 data-[state=open]:bg-fiord-200 dark:bg-fiord-900 dark:text-white dark:hover:bg-fiord-800 dark:data-[state=open]:bg-fiord-800"
 			>
 				<slot name="title"></slot>
 				<Icon
 					icon="ph:plus"
-					class="transition-transform"
-					:class="{ 'rotate-45': $el.closest('[data-state=open]') !== null }"
+					class="size-5 transition-transform group-data-[state=open]:rotate-45"
 				/>
 			</AccordionTrigger>
 		</AccordionHeader>

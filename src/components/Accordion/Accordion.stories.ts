@@ -1,21 +1,21 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
-import { Accordion, AccordionItem } from '.'
+import { AccordionItem, AccordionRoot } from '.'
 
 const meta = {
-	component: Accordion,
+	component: AccordionRoot,
 	title: 'Base/Accordion',
 	tags: ['autodocs']
-} satisfies Meta<typeof Accordion>
+} satisfies Meta<typeof AccordionRoot>
 
 export default meta
 
-const Template: StoryFn<typeof Accordion> = (args: unknown) => ({
-	components: { Accordion, AccordionItem },
+const Template: StoryFn<typeof AccordionRoot> = (args: unknown) => ({
+	components: { AccordionRoot, AccordionItem },
 	setup() {
 		return { args }
 	},
 	template: `
-    <Accordion v-bind="args">
+    <AccordionRoot v-bind="args">
       <AccordionItem value="item-1">
         <template #title>Title 1</template>
         <template #content>
@@ -34,7 +34,7 @@ const Template: StoryFn<typeof Accordion> = (args: unknown) => ({
           Content 3.
         </template>
       </AccordionItem>
-    </Accordion>
+    </AccordionRoot>
   `
 })
 
