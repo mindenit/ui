@@ -61,11 +61,21 @@ export default {
 				fadeOut: {
 					from: { opacity: 1 },
 					to: { opacity: 0 }
+				},
+				slideDown: {
+					from: { height: 0 },
+					to: { height: 'var(--radix-accordion-content-height)' }
+				},
+				slideUp: {
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: 0 }
 				}
 			},
 			animation: {
 				fadeIn: 'fadeIn 247ms ease-out',
-				fadeOut: 'fadeOut 247ms ease-in'
+				fadeOut: 'fadeOut 247ms ease-in',
+				slideDown: 'slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)',
+				slideUp: 'slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)'
 			}
 		}
 	},
