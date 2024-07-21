@@ -2,7 +2,7 @@ import { VariantProps, cva } from 'class-variance-authority'
 import { HTMLAttributes } from 'vue'
 
 export const textFieldVariants = cva(
-	'box-border inline-flex h-10 w-full min-w-48 items-stretch gap-2 rounded-lg border bg-white pl-3 pr-1 text-start has-[input:disabled]:cursor-not-allowed has-[input:disabled]:border-0 has-[input:disabled]:bg-fiord-200 has-[input:focus]:ring dark:bg-fiord-950 dark:has-[input:disabled]:bg-fiord-800',
+	'box-border inline-flex h-10 w-full min-w-48 items-stretch gap-2 rounded-lg border bg-white pl-3 pr-1 text-start has-[input:disabled]:cursor-not-allowed has-[input:disabled]:border-0 has-[input:disabled]:bg-fiord-200 has-[input:focus]:ring dark:bg-fiord-950 dark:has-[input:disabled]:bg-fiord-800 [&_button]:size-7 [&_button_svg]:size-4',
 	{
 		variants: {
 			variant: {
@@ -24,3 +24,7 @@ export interface TextFieldProps {
 	class?: HTMLAttributes['class']
 	error?: boolean
 }
+
+export { default as TextFieldInput } from './TextFieldInput.vue'
+export { default as TextFieldRoot } from './TextFieldRoot.vue'
+export { default as TextFieldSlot } from './TextFieldSlot.vue'
