@@ -71,7 +71,7 @@ const WithLabelTemplate: StoryFn<typeof TextFieldInput> = (args: unknown) => ({
 		return { args }
 	},
 	template: `
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-1">
       <FormLabel for="input">Name</FormLabel>
       <TextFieldRoot>
         <TextFieldSlot>

@@ -11,7 +11,7 @@ const props = defineProps<Props>()
 </script>
 
 <template>
-	<Label :class="cn('text-base font-semibold text-black dark:text-white', props.class)">
+	<Label :class="cn('text-sm font-medium leading-5 text-black dark:text-white', props.class)">
 		<slot></slot>
 	</Label>
 </template>

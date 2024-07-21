@@ -36,7 +36,7 @@ const forwarded = useForwardPropsEmits(props, emits)
 				<PaginationListItem
 					v-if="page.type === 'page'"
 					:key="index"
-					class="size-8 rounded-lg border border-fiord-300 text-sm font-medium transition hover:bg-fiord-200 focus:border-fiord-300 focus:ring focus:ring-royal-blue-500/40 active:shadow-inner active:shadow-fiord-950/5 data-[selected]:border-royal-blue-600 data-[selected]:bg-royal-blue-500 data-[selected]:text-white data-[selected]:hover:shadow-md data-[selected]:hover:shadow-royal-blue-500/40 dark:border-fiord-700 dark:text-fiord-400 dark:hover:border-fiord-500 dark:hover:bg-fiord-700 dark:hover:text-white dark:active:shadow-fiord-50/5 dark:data-[selected]:border-royal-blue-400 dark:data-[selected]:text-white dark:data-[selected]:hover:border-royal-blue-400 dark:data-[selected]:hover:bg-royal-blue-500"
+					class="size-8 rounded-lg border border-fiord-300 text-sm font-medium transition hover:bg-fiord-100 focus:border-fiord-300 focus:ring focus:ring-royal-blue-500/40 active:shadow-inner active:shadow-fiord-950/5 data-[selected]:border-royal-blue-600 data-[selected]:bg-royal-blue-500 data-[selected]:text-white data-[selected]:hover:shadow-md data-[selected]:hover:shadow-royal-blue-500/40 dark:border-fiord-700 dark:text-fiord-400 dark:hover:border-fiord-500 dark:hover:bg-fiord-700 dark:hover:text-white dark:active:shadow-fiord-50/5 dark:data-[selected]:border-royal-blue-400 dark:data-[selected]:text-white dark:data-[selected]:hover:border-royal-blue-400 dark:data-[selected]:hover:bg-royal-blue-500"
 					:value="page.value"
 				>
 					{{ page.value }}
