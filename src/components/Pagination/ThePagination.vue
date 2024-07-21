@@ -36,7 +36,7 @@ const forwarded = useForwardPropsEmits(props, emits)
 				<PaginationListItem
 					v-if="page.type === 'page'"
 					:key="index"
-					class="size-8 rounded border border-fiord-200 text-sm font-medium transition hover:bg-fiord-100 data-[selected]:bg-royal-blue-500 dark:border-fiord-800 dark:text-fiord-400 dark:hover:bg-fiord-700 data-[selected]:dark:text-white"
+					class="size-8 rounded border border-fiord-200 text-sm font-medium transition hover:bg-fiord-100 data-[selected]:bg-royal-blue-500 data-[selected]:text-white dark:border-fiord-800 dark:text-fiord-400 dark:hover:bg-fiord-700"
 					:value="page.value"
 				>
 					{{ page.value }}
