@@ -8,21 +8,19 @@ import {
 	PaginationListItem,
 	PaginationNext,
 	PaginationPrev,
-	PaginationRoot
+	PaginationRoot,
+	PaginationRootEmits,
+	PaginationRootProps,
+	useForwardPropsEmits
 } from 'radix-vue'
-import { defineProps } from 'vue'
-import type { PaginationProps } from '.'
 
-const props = defineProps<PaginationProps>()
+const props = defineProps<PaginationRootProps>()
+const emits = defineEmits<PaginationRootEmits>()
+const forwarded = useForwardPropsEmits(props, emits)
 </script>
 
 <template>
-	<PaginationRoot
-		:total="props.total"
-		:sibling-count="props.siblingCount"
-		:show-edges="props.showEdges"
-		:default-page="props.defaultPage"
-	>
+	<PaginationRoot v-bind="forwarded">
 		<PaginationList v-slot="{ items }" class="flex items-center gap-2">
 			<PaginationFirst
 				class="flex size-8 items-center justify-center rounded disabled:opacity-50 dark:text-fiord-400"
@@ -38,7 +36,7 @@ const props = defineProps<PaginationProps>()
 				<PaginationListItem
 					v-if="page.type === 'page'"
 					:key="index"
-					class="size-8 rounded border border-fiord-200 text-sm font-medium transition hover:bg-fiord-100 data-[selected]:bg-fiord-200 dark:border-fiord-800 dark:text-fiord-400 dark:hover:bg-fiord-700 dark:data-[selected]:bg-fiord-800"
+					class="size-8 rounded border border-fiord-200 text-sm font-medium transition hover:bg-fiord-100 data-[selected]:bg-royal-blue-500 dark:border-fiord-800 dark:text-fiord-400 dark:hover:bg-fiord-700 data-[selected]:dark:text-white"
 					:value="page.value"
 				>
 					{{ page.value }}
