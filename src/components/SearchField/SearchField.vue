@@ -3,11 +3,15 @@ import { TextFieldRoot, TextFieldSlot, TextFieldInput } from '../TextField'
 import { Icon } from '@iconify/vue'
 import { Button } from '../Button'
 import { ref } from 'vue'
+import { useFocus } from '@vueuse/core'
 
+const element = ref<HTMLInputElement | null>(null)
 const searchValue = ref('')
+const { focused } = useFocus(element)
 
 const handleReset = () => {
 	searchValue.value = ''
+	focused.value = true
 }
 
 const handleUpdate = (value: string | number) => {
@@ -22,6 +26,7 @@ const handleUpdate = (value: string | number) => {
 		</TextFieldSlot>
 		<TextFieldInput
 			v-bind="$attrs"
+			ref="element"
 			id="search"
 			type="search"
 			:model-value="searchValue"
