@@ -1,12 +1,12 @@
 <script setup lang="ts">
-import { TabsRoot, TabsRootProps, useForwardPropsEmits } from 'radix-vue'
+import { TabsRoot, TabsRootEmits, TabsRootProps, useForwardPropsEmits } from 'radix-vue'
 const props = defineProps<TabsRootProps>()
-const emits = defineEmits(['update:value'])
+const emits = defineEmits<TabsRootEmits>()
 const forwarded = useForwardPropsEmits(props, emits)
 </script>
 
 <template>
-	<TabsRoot v-bind="forwarded" class="flex w-full flex-col">
+	<TabsRoot v-bind="forwarded">
 		<slot />
 	</TabsRoot>
 </template>

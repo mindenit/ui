@@ -5,7 +5,7 @@ const forwarded = useForwardProps(props)
 </script>
 
 <template>
-	<TabsContent v-bind="forwarded" class="">
+	<TabsContent v-bind="forwarded">
 		<slot />
 	</TabsContent>
 </template>
