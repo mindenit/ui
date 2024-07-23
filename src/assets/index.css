@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-	@apply bg-fiord-100 font-inter accent-royal-blue-500 dark:bg-fiord-950;
+	@apply bg-white font-inter accent-royal-blue-500 dark:bg-fiord-950;
 }
 
 svg {
