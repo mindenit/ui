@@ -1,50 +1,26 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/vue3'
-import { StepIndicator, StepIndicatorProps } from '.'
+import { StepIndicatorItem, StepIndicatorRoot } from '.'
 
 const meta = {
 	title: 'Base/StepIndicator',
-	component: StepIndicator,
+	component: StepIndicatorRoot,
 	tags: ['autodocs'],
-	args: {
-		default: 'Text here'
-	},
-	argTypes: {
-		default: {
-			controls: 'text',
-			description: 'Slot content',
-			defaultValue: 'Text here'
-		},
-		step: {
-			control: 'number',
-			description: 'Step number',
-			defaultValue: 1
-		},
-		state: {
-			name: 'state',
-			table: {
-				type: { summary: 'default | active | completed' }
-			},
-			control: 'inline-radio',
-			options: ['default', 'active', 'completed'],
-			defaultValue: 'default'
-		}
-	}
-} satisfies Meta<typeof StepIndicator>
+	argTypes: {}
+} satisfies Meta<typeof StepIndicatorRoot>
 
 export default meta
 
-const Template: StoryFn<StepIndicatorProps> = (args: unknown) => ({
-	components: { StepIndicator },
+const Template: StoryFn<typeof StepIndicatorRoot> = (args: unknown) => ({
+	components: { StepIndicatorRoot, StepIndicatorItem },
 	setup() {
 		return { args }
 	},
-	template: `<StepIndicator v-bind="args" >{{ args.default }}</StepIndicator>`
+	template: `<StepIndicatorRoot v-bind="args">
+		<StepIndicatorItem step=1 completed=true>Step 1</StepIndicatorItem>
+		<StepIndicatorItem step=2 :state="active">Step 2</StepIndicatorItem>
+		<StepIndicatorItem step=3>Step 3</StepIndicatorItem>
+	</StepIndicatorRoot>`
 })
 
-type Story = StoryObj<StepIndicatorProps>
-
+type Story = StoryObj<typeof StepIndicatorRoot>
 export const Default: Story = Template.bind({})
-Default.args = {
-	step: 1,
-	state: 'default'
-}
