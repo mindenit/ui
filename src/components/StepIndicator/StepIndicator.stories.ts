@@ -1,4 +1,5 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/vue3'
+import { ref } from 'vue'
 import { StepIndicatorItem, StepIndicatorRoot } from '.'
 
 const meta = {
@@ -13,14 +14,35 @@ export default meta
 const Template: StoryFn<typeof StepIndicatorRoot> = (args: unknown) => ({
 	components: { StepIndicatorRoot, StepIndicatorItem },
 	setup() {
-		return { args }
+		const value = ref(1)
+
+		return { args, value }
 	},
-	template: `<StepIndicatorRoot v-bind="args">
-		<StepIndicatorItem step=1 completed=true>Step 1</StepIndicatorItem>
-		<StepIndicatorItem step=2 :state="active">Step 2</StepIndicatorItem>
-		<StepIndicatorItem step=3>Step 3</StepIndicatorItem>
-	</StepIndicatorRoot>`
+	template: `
+	<StepIndicatorRoot v-bind="args" v-model="value">
+		<StepIndicatorItem
+			v-for="n in 3"
+			:key="n"
+			:step="n"
+			:completed="n < value"
+			:steps="3"
+		>
+			Step {{ n }}
+		</StepIndicatorItem>
+	</StepIndicatorRoot>
+	`
 })
 
 type Story = StoryObj<typeof StepIndicatorRoot>
-export const Default: Story = Template.bind({})
+
+export const Vertical: Story = Template.bind({})
+
+Vertical.args = {
+	orientation: 'vertical'
+}
+
+export const Horizontal: Story = Template.bind({})
+
+Horizontal.args = {
+	orientation: 'horizontal'
+}

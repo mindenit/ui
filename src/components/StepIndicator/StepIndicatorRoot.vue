@@ -7,7 +7,10 @@ const emits = defineEmits<StepperRootEmits>()
 const forwarded = useForwardPropsEmits(props, emits)
 </script>
 <template>
-	<StepperRoot v-bind="forwarded" class="flex data-[orientation=vertical]:flex-col">
+	<StepperRoot
+		v-bind="forwarded"
+		class="flex gap-4 data-[orientation=horizontal]:flex-row data-[orientation=vertical]:flex-col"
+	>
 		<slot />
 	</StepperRoot>
 </template>
