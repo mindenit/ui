@@ -2,7 +2,7 @@ import { cva, type VariantProps } from 'class-variance-authority'
 import { HTMLAttributes } from 'vue'
 
 export const buttonVariants = cva(
-	'font-regular box-border inline-flex select-none items-center justify-center gap-2 rounded-lg text-sm font-medium outline-none transition-all active:shadow-inner active:shadow-fiord-950/15 disabled:cursor-not-allowed disabled:shadow-none [&_svg]:size-5',
+	'font-regular box-border inline-flex select-none items-center justify-center gap-2 rounded-lg text-sm outline-none transition-all active:shadow-inner active:shadow-fiord-950/15 disabled:cursor-not-allowed disabled:shadow-none [&_svg]:size-5',
 	{
 		variants: {
 			variant: {
