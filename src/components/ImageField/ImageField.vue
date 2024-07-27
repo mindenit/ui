@@ -11,23 +11,34 @@ const props = withDefaults(
 		description?: string
 		fallbackIcon?: string
 		acceptedFileFormats?: string[]
+		maxSize?: number
 	}>(),
-	{ fallbackIcon: 'ph:image-fill' }
+	{ fallbackIcon: 'ph:image-fill', maxSize: 5 }
 )
 
-const model = ref<File | null>()
+const emits = defineEmits<{
+	'update:file': [file: File | null]
+}>()
 
-const uploadButtonFallback = computed(() => (model.value ? 'Change' : 'Upload'))
+const file = ref<File | null>()
+
+const uploadButtonFallback = computed(() => (file.value ? 'Change' : 'Upload'))
 
 const handleSelect = (files: File[]) => {
-	model.value = files[0]
+	if (files[0].size > props.maxSize * 1024 * 1024) {
+		return
+	} else {
+		file.value = files[0]
+		emits('update:file', file.value)
+	}
 }
 
 const handleReset = () => {
-	model.value = null
+	file.value = null
+	emits('update:file', file.value)
 }
 
-const src = computed(() => URL.createObjectURL(model.value as File))
+const src = computed(() => URL.createObjectURL(file.value as File))
 const hasText = computed(() => props.title && props.description)
 </script>
 
@@ -37,7 +48,7 @@ const hasText = computed(() => props.title && props.description)
 			class="flex size-16 items-center justify-center rounded-full bg-fiord-300 dark:bg-fiord-800"
 		>
 			<AvatarImage
-				v-if="model"
+				v-if="file"
 				class="size-full rounded-[inherit] object-cover"
 				:src
 				alt="Image preview"
@@ -48,7 +59,7 @@ const hasText = computed(() => props.title && props.description)
 			<h5 v-if="title" class="text-base leading-6 text-black">{{ title }}</h5>
 			<p v-if="description" class="text-sm leading-5 text-fiord-400">{{ description }}</p>
 			<div class="inline-flex gap-2" :class="{ 'mt-2': hasText }">
-				<Button v-if="model" variant="danger" @click="handleReset">Remove</Button>
+				<Button v-if="file" variant="danger" @click="handleReset">Remove</Button>
 				<FileTrigger :accepted-file-types="acceptedFileFormats" @select="handleSelect">
 					{{ uploadButtonFallback }}
 				</FileTrigger>
