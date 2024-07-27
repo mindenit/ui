@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { Icon } from '@iconify/vue'
 import { AvatarImage, AvatarRoot } from 'radix-vue'
-import { computed } from 'vue'
+import { computed, ref } from 'vue'
 import { Button } from '../Button'
 import { FileTrigger } from '../FileTrigger'
 
@@ -15,14 +15,12 @@ const props = withDefaults(
 	{ fallbackIcon: 'ph:image-fill' }
 )
 
-const model = defineModel<File | null>()
+const model = ref<File | null>()
 
 const uploadButtonFallback = computed(() => (model.value ? 'Change' : 'Upload'))
 
-const handleSelect = (files: FileList | null) => {
-	if (files) {
-		model.value = files.item(0)
-	}
+const handleSelect = (files: File[]) => {
+	model.value = files[0]
 }
 
 const handleReset = () => {
