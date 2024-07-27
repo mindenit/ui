@@ -11,7 +11,7 @@ withDefaults(
 )
 
 const emits = defineEmits<{
-	select: [files: FileList | null]
+	select: [files: File[]]
 }>()
 
 const elementRef = ref<HTMLInputElement | null>(null)
@@ -19,7 +19,9 @@ const elementRef = ref<HTMLInputElement | null>(null)
 const handleChange = (e: Event) => {
 	const target = e.target as HTMLInputElement
 
-	emits('select', target.files)
+	const files = Array.from(target.files ?? [])
+
+	emits('select', files)
 }
 
 const handleClick = () => {

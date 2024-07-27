@@ -29,5 +29,9 @@ export const Customized: Story = {
 		},
 		template: `<ImageField v-bind="args" />`
 	}),
-	args: { title: 'Upload Image', description: 'Min 400x400px, PNG or JPEG' }
+	args: {
+		title: 'Upload Image',
+		description: 'Min 400x400px, PNG or JPEG',
+		acceptedFileFormats: ['image/jpeg', 'image/png']
+	}
 }
