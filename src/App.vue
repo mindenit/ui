@@ -1,9 +1,5 @@
-<script setup lang="ts">
-import { DropZone } from './components/DropZone'
-</script>
+<script setup lang="ts"></script>
 
 <template>
-	<div class="p-4">
-		<DropZone>Drop</DropZone>
-	</div>
+	<div></div>
 </template>
