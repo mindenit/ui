@@ -21,7 +21,8 @@
 		"tailwindcss/classnames-order": "warn",
 		"tailwindcss/enforces-shorthand": "error",
 		"tailwindcss/no-contradicting-classname": "error",
-		"tailwindcss/no-arbitrary-value": "off"
+		"tailwindcss/no-arbitrary-value": "off",
+		"@typescript-eslint/no-unused-vars": "off"
 	},
 	"ignorePatterns": ["!.storybook"]
 }
