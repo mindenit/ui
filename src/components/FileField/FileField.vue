@@ -11,13 +11,14 @@ const props = withDefaults(
 		fallback: string
 		allowMultiple?: boolean
 		acceptedFileFormats?: string[]
+		maxSize?: number
+		fileLimit?: number
 	}>(),
-	{ allowMultiple: false }
+	{ allowMultiple: false, maxSize: 2 * 1024 * 1024, fileLimit: 1 }
 )
 
 const emits = defineEmits<{
-	select: [files: File[]]
-	overflow: [count: number]
+	'update:files': [files: File[]]
 }>()
 
 const elementRef = ref<HTMLInputElement | null>()
@@ -26,9 +27,19 @@ const { isOverDropZone } = useDropZone(elementRef, {
 	dataTypes: props.acceptedFileFormats,
 	onDrop: (files) => {
 		if (files && files.length > 1 && props.allowMultiple) {
-			emits('overflow', files.length)
-		} else if (files) {
-			emits('select', files)
+			return
+		}
+
+		if (files) {
+			if (files.length > props.fileLimit) {
+				return
+			}
+
+			if (files.some((file) => file.size > props.maxSize)) {
+				return
+			}
+
+			emits('update:files', files)
 		}
 	}
 })
@@ -36,10 +47,11 @@ const { isOverDropZone } = useDropZone(elementRef, {
 
 <template>
 	<!-- eslint-disable tailwindcss/no-contradicting-classname -->
-	<div
+	<label
 		v-bind="$attrs"
 		ref="elementRef"
-		class="box-border flex min-h-20 w-full flex-col items-center justify-center gap-5 rounded-lg border border-dashed border-fiord-300 p-8 data-[hovered=true]:border-fiord-500 data-[hovered=true]:border-fiord-600 data-[hovered=true]:bg-fiord-100 dark:border-fiord-700 dark:data-[hovered=true]:bg-fiord-900"
+		class="box-border flex min-h-20 w-full flex-col items-center justify-center gap-5 rounded-lg border border-dashed border-fiord-300 p-8 hover:cursor-pointer hover:border-fiord-500 hover:bg-fiord-100 data-[hovered=true]:cursor-pointer data-[hovered=true]:border-fiord-500 data-[hovered=true]:bg-fiord-100 dark:border-fiord-700 dark:hover:border-fiord-600 dark:hover:bg-fiord-900 dark:data-[hovered=true]:border-fiord-600 dark:data-[hovered=true]:bg-fiord-900"
+		for="file-trigger"
 		:data-hovered="isOverDropZone"
 	>
 		<Icon class="size-8 text-fiord-500 dark:text-fiord-400" icon="ph:cloud-arrow-up" />
@@ -48,11 +60,12 @@ const { isOverDropZone } = useDropZone(elementRef, {
 			<p v-if="description" class="text-xs text-fiord-500">{{ description }}</p>
 		</div>
 		<FileTrigger
+			id="file-trigger"
 			:allow-multiple="allowMultiple"
 			:accepted-file-types="acceptedFileFormats"
-			@select="(files) => $emit('select', files)"
+			@update:files="(files) => $emit('update:files', files)"
 		>
 			{{ fallback }}
 		</FileTrigger>
-	</div>
+	</label>
 </template>

@@ -13,7 +13,7 @@ const props = withDefaults(
 		acceptedFileFormats?: string[]
 		maxSize?: number
 	}>(),
-	{ fallbackIcon: 'ph:image-fill', maxSize: 5 }
+	{ fallbackIcon: 'ph:image-fill', maxSize: 2 * 1024 * 1024 }
 )
 
 const emits = defineEmits<{
@@ -25,7 +25,7 @@ const file = ref<File | null>()
 const uploadButtonFallback = computed(() => (file.value ? 'Change' : 'Upload'))
 
 const handleSelect = (files: File[]) => {
-	if (files[0].size > props.maxSize * 1024 * 1024) {
+	if (files[0].size > props.maxSize) {
 		return
 	} else {
 		file.value = files[0]
@@ -60,7 +60,7 @@ const hasText = computed(() => props.title && props.description)
 			<p v-if="description" class="text-sm leading-5 text-fiord-400">{{ description }}</p>
 			<div class="inline-flex gap-2" :class="{ 'mt-2': hasText }">
 				<Button v-if="file" variant="danger" @click="handleReset">Remove</Button>
-				<FileTrigger :accepted-file-types="acceptedFileFormats" @select="handleSelect">
+				<FileTrigger :accepted-file-types="acceptedFileFormats" @update:files="handleSelect">
 					{{ uploadButtonFallback }}
 				</FileTrigger>
 			</div>

@@ -2,16 +2,17 @@
 import { ref } from 'vue'
 import { Button } from '../Button'
 
-withDefaults(
+const props = withDefaults(
 	defineProps<{
 		acceptedFileTypes?: string[]
 		allowMultiple?: boolean
+		maxSize?: number
 	}>(),
-	{ allowMultiple: false }
+	{ allowMultiple: false, maxSize: 2 * 1024 * 1024 }
 )
 
 const emits = defineEmits<{
-	select: [files: File[]]
+	'update:files': [files: File[]]
 }>()
 
 const elementRef = ref<HTMLInputElement | null>(null)
@@ -21,10 +22,16 @@ const handleChange = (e: Event) => {
 
 	const files = Array.from(target.files ?? [])
 
-	emits('select', files)
+	if (files.some((file) => file.size > props.maxSize)) {
+		return
+	}
+
+	emits('update:files', files)
 }
 
-const handleClick = () => {
+const handleClick = (e: Event) => {
+	e.stopPropagation()
+
 	if (elementRef.value?.value) {
 		elementRef.value.value = ''
 	}

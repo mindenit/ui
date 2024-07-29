@@ -8,7 +8,7 @@ const props = withDefaults(defineProps<ButtonProps>(), { asChild: false })
 
 <template>
 	<Primitive
-		v-bind="$props"
+		v-bind="$attrs"
 		as="button"
 		:as-child="asChild"
 		:class="cn(buttonVariants({ variant, appearance }), props.class)"
