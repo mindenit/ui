@@ -10,6 +10,9 @@ importers:
       '@iconify/vue':
         specifier: ^4.1.1
         version: 4.1.1(vue@3.4.21(typescript@5.4.3))
+      '@internationalized/date':
+        specifier: ^3.5.5
+        version: 3.5.5
       '@vueuse/core':
         specifier: ^10.9.0
         version: 10.9.0(vue@3.4.21(typescript@5.4.3))
@@ -9279,10 +9282,10 @@ packages:
         integrity: sha512-iVJugClQdu3ZyF0N4CF3Egi+gWYfnxlIPPGtFXZG29rF3kQIuziP+k7rVGCCHiibIOQ1SlspKjrh+LRYzMpwTA==
       }
 
-  vue-component-type-helpers@2.0.28:
+  vue-component-type-helpers@2.0.29:
     resolution:
       {
-        integrity: sha512-hoK0UsKXrXDY9zdpdk+drqOqYHpPhbmfQUJ2mFYK57+l73mQxcYyCteQsolllwGaxhWihT077+OA/FR5ZPTceg==
+        integrity: sha512-58i+ZhUAUpwQ+9h5Hck0D+jr1qbYl4voRt5KffBx8qzELViQ4XdT/Tuo+mzq8u63teAG8K0lLaOiL5ofqW38rg==
       }
 
   vue-component-type-helpers@2.0.7:
@@ -11768,7 +11771,7 @@ snapshots:
       ts-dedent: 2.2.0
       type-fest: 2.19.0
       vue: 3.4.21(typescript@5.4.3)
-      vue-component-type-helpers: 2.0.28
+      vue-component-type-helpers: 2.0.29
 
   '@swc/core-darwin-arm64@1.6.13':
     optional: true
@@ -16002,7 +16005,7 @@ snapshots:
 
   vue-component-type-helpers@2.0.12: {}
 
-  vue-component-type-helpers@2.0.28: {}
+  vue-component-type-helpers@2.0.29: {}
 
   vue-component-type-helpers@2.0.7: {}
 
