@@ -1,6 +1,7 @@
 <script lang="ts" setup>
+import { cn } from '@/utils'
 import { Icon } from '@iconify/vue'
-import { DateFormatter, getLocalTimeZone, today, type DateValue } from '@internationalized/date'
+import { getLocalTimeZone, today, type DateValue } from '@internationalized/date'
 import {
 	CalendarCell,
 	CalendarCellTrigger,
@@ -10,30 +11,26 @@ import {
 	CalendarGridRow,
 	CalendarHeadCell,
 	CalendarHeader,
+	CalendarHeading,
 	CalendarNext,
 	CalendarPrev,
 	CalendarRoot,
 	CalendarRootEmits,
-	CalendarRootProps,
 	PopoverContent,
 	PopoverPortal,
 	PopoverRoot,
 	PopoverTrigger,
-	useForwardPropsEmits,
-	CalendarHeading
+	useForwardPropsEmits
 } from 'radix-vue'
 import { computed } from 'vue'
+import { DatePickerProps } from '.'
 import { Button } from '../Button'
-import { cn } from '@/utils'
-
-interface DatePickerProps extends Omit<CalendarRootProps, 'placeholder' | 'fixedWeeks'> {
-	placeholder?: string
-	formatFn: (value: Date) => string
-}
+import { SelectContent, SelectItem, SelectRoot, SelectTrigger } from '../Select'
 
 const props = withDefaults(defineProps<DatePickerProps>(), {
 	placeholder: 'Pick a date',
-	locale: 'en-EN'
+	locale: 'en-EN',
+	presetsPlaceholder: 'Select preset'
 })
 
 const emits = defineEmits<CalendarRootEmits>()
@@ -52,16 +49,13 @@ const btnFallback = computed(() => {
 		: props.placeholder
 })
 
-const df = new DateFormatter(props.locale, {
-	month: 'long',
-	year: 'numeric'
-})
+const handlePreset = (value: string) => {
+	if (!value) return
 
-const header = computed(() => {
-	return !props.modelValue
-		? df.format(today(getLocalTimeZone()).toDate(getLocalTimeZone()))
-		: df.format((props.modelValue as DateValue).toDate(getLocalTimeZone()))
-})
+	const newDate = today(getLocalTimeZone()).add({ days: Number(value) })
+
+	emits('update:modelValue', newDate)
+}
 </script>
 
 <template>
@@ -74,14 +68,28 @@ const header = computed(() => {
 		</PopoverTrigger>
 		<PopoverPortal>
 			<PopoverContent
-				class="box-border flex h-fit w-[296px] flex-col rounded-lg border border-fiord-300 p-2 dark:border-fiord-700"
+				class="box-border flex h-fit w-[296px] flex-col gap-3 rounded-xl border border-fiord-300 p-2 dark:border-fiord-700"
 				align="start"
 				side="bottom"
 				:side-offset="4"
 			>
+				<div v-if="presets">
+					<SelectRoot @update:model-value="handlePreset">
+						<SelectTrigger class="w-full" :placeholder="presetsPlaceholder" />
+						<SelectContent>
+							<SelectItem
+								v-for="preset in presets"
+								:key="preset.value"
+								:value="preset.value.toString()"
+							>
+								{{ preset.label }}
+							</SelectItem>
+						</SelectContent>
+					</SelectRoot>
+				</div>
 				<CalendarRoot v-bind="forwarded" v-slot="{ weekDays, grid }" fixed-weeks>
 					<CalendarHeader
-						class="inline-flex w-full items-center justify-between rounded-md bg-fiord-100 p-2 dark:bg-fiord-900"
+						class="inline-flex w-full items-center justify-between rounded-lg bg-fiord-100 p-2 dark:bg-fiord-900"
 					>
 						<CalendarPrev as-child>
 							<Button
