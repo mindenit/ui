@@ -5,7 +5,8 @@ import { DatePicker } from '.'
 
 const meta = {
 	title: 'Forms/DatePicker',
-	component: DatePicker
+	component: DatePicker,
+	tags: ['autodocs	']
 } satisfies Meta<typeof DatePicker>
 
 export default meta

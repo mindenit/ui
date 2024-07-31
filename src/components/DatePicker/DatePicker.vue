@@ -19,7 +19,8 @@ import {
 	PopoverPortal,
 	PopoverRoot,
 	PopoverTrigger,
-	useForwardPropsEmits
+	useForwardPropsEmits,
+	CalendarHeading
 } from 'radix-vue'
 import { computed } from 'vue'
 import { Button } from '../Button'
@@ -57,11 +58,9 @@ const df = new DateFormatter(props.locale, {
 })
 
 const header = computed(() => {
-	return df.format(
-		(props.modelValue ? (props.modelValue as DateValue) : today(getLocalTimeZone())).toDate(
-			getLocalTimeZone()
-		)
-	)
+	return !props.modelValue
+		? df.format(today(getLocalTimeZone()).toDate(getLocalTimeZone()))
+		: df.format((props.modelValue as DateValue).toDate(getLocalTimeZone()))
 })
 </script>
 
@@ -75,21 +74,31 @@ const header = computed(() => {
 		</PopoverTrigger>
 		<PopoverPortal>
 			<PopoverContent
-				class="box-border flex h-fit w-[296px] flex-col rounded-lg border border-fiord-300 p-2"
+				class="box-border flex h-fit w-[296px] flex-col rounded-lg border border-fiord-300 p-2 dark:border-fiord-700"
 				align="start"
 				side="bottom"
 				:side-offset="4"
 			>
 				<CalendarRoot v-bind="forwarded" v-slot="{ weekDays, grid }" fixed-weeks>
-					<CalendarHeader class="inline-flex w-full items-center justify-between">
+					<CalendarHeader
+						class="inline-flex w-full items-center justify-between rounded-md bg-fiord-100 p-2 dark:bg-fiord-900"
+					>
 						<CalendarPrev as-child>
-							<Button variant="ghost" appearance="icon">
+							<Button
+								class="size-6 bg-white dark:bg-fiord-950 [&_svg]:size-4"
+								variant="ghost"
+								appearance="icon"
+							>
 								<Icon icon="ph:caret-left" />
 							</Button>
 						</CalendarPrev>
-						<CalendarHeader class="text-sm">{{ header }}</CalendarHeader>
+						<CalendarHeading class="text-sm text-black dark:text-white" />
 						<CalendarNext as-child>
-							<Button variant="ghost" appearance="icon">
+							<Button
+								class="size-6 bg-white dark:bg-fiord-950 [&_svg]:size-4"
+								variant="ghost"
+								appearance="icon"
+							>
 								<Icon icon="ph:caret-right" />
 							</Button>
 						</CalendarNext>
@@ -123,7 +132,7 @@ const header = computed(() => {
 										:date="weekDate"
 									>
 										<CalendarCellTrigger
-											class="font-sm flex size-10 items-center justify-center rounded-lg text-fiord-700 hover:bg-fiord-200 hover:text-black data-[selected]:border data-[selected]:border-royal-blue-600 data-[selected]:bg-royal-blue-500 data-[today]:bg-fiord-100 data-[selected]:text-white"
+											class="font-sm flex size-10 items-center justify-center rounded-lg text-fiord-700 hover:bg-fiord-200 hover:text-black data-[selected]:border data-[selected]:border-royal-blue-600 data-[selected]:bg-royal-blue-500 data-[today]:bg-fiord-100 data-[today]:data-[selected]:bg-royal-blue-500 data-[outside-view]:text-fiord-400 data-[selected]:text-white data-[outside-view]:hover:text-black dark:text-fiord-400 dark:hover:bg-fiord-800 dark:hover:text-white dark:data-[selected]:border-royal-blue-400 dark:data-[today]:bg-fiord-900 dark:data-[today]:data-[selected]:bg-royal-blue-500 dark:data-[outside-view]:text-fiord-600 dark:data-[selected]:text-white dark:data-[selected]:hover:bg-royal-blue-500 dark:data-[today]:data-[selected]:hover:bg-royal-blue-500 dark:data-[today]:hover:bg-fiord-800 dark:data-[outside-view]:hover:text-white"
 											:day="weekDate"
 											:month="month.value"
 										/>
