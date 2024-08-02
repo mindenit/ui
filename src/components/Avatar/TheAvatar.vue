@@ -2,7 +2,7 @@
 import { cn } from '@/utils'
 import { AvatarFallback, AvatarImage, AvatarRoot } from 'radix-vue'
 import { computed } from 'vue'
-import { avatarFallbackVariants, AvatarProps } from '.'
+import { avatarVariants, AvatarProps } from '.'
 
 const props = withDefaults(defineProps<AvatarProps>(), { size: '32px', fallback: '' })
 
@@ -13,7 +13,7 @@ const computedSize = computed(() => {
 	}
 })
 
-const computedClasses = computed(() => cn(avatarFallbackVariants({ size: props.size })))
+const computedClasses = computed(() => cn(avatarVariants({ size: props.size })))
 </script>
 
 <template>

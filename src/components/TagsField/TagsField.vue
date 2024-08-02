@@ -39,8 +39,8 @@ const forwarded = useForwardPropsEmits(props, emits)
 		<div class="inline-flex gap-1">
 			<TagsInputItem
 				class="flex h-6 items-center justify-between gap-2 rounded-md border border-fiord-300 bg-white py-1 pl-2 pr-1 text-sm data-[state=active]:ring data-[state=active]:ring-fiord-950/15 dark:border-fiord-700 dark:bg-fiord-950 dark:text-white"
-				v-for="value in modelValue"
-				:key="value"
+				v-for="(value, index) in modelValue"
+				:key="index"
 				:value="value"
 			>
 				<TagsInputItemText />

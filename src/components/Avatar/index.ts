@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 
-export const avatarFallbackVariants = cva('', {
+export const avatarVariants = cva('', {
 	variants: {
 		size: {
 			'80px': 'text-2xl',
@@ -19,7 +19,7 @@ export const avatarFallbackVariants = cva('', {
 	}
 })
 
-type AvatarVariants = VariantProps<typeof avatarFallbackVariants>
+type AvatarVariants = VariantProps<typeof avatarVariants>
 
 export interface AvatarProps {
 	size: AvatarVariants['size']

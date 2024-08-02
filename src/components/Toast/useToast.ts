@@ -1,6 +1,6 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import { computed, ref } from 'vue'
-import type { Component, VNode } from 'vue'
+import type { Component, ComputedRef, VNode } from 'vue'
 import type { ToastProps } from '.'
 
 const TOAST_LIMIT = 1
@@ -21,6 +21,12 @@ const actionTypes = {
 	DISMISS_TOAST: 'DISMISS_TOAST',
 	REMOVE_TOAST: 'REMOVE_TOAST'
 } as const
+
+interface UseToast {
+	toasts: ComputedRef<ToasterToast[]>
+	toast: (props: Toast) => ReturnType<typeof toast>
+	dismiss: (toastId?: string) => void
+}
 
 let count = 0
 
@@ -115,7 +121,7 @@ function dispatch(action: Action) {
 	}
 }
 
-function useToast() {
+function useToast(): UseToast {
 	return {
 		toasts: computed(() => state.value.toasts),
 		toast,

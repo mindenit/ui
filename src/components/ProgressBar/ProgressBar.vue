@@ -19,6 +19,7 @@ const forwarded = useForwardPropsEmits(props, emits)
 		style="transform: translateZ(0)"
 	>
 		<ProgressIndicator
+			v-if="modelValue"
 			class="ease-[cubic-bezier(0.65, 0, 0.35, 1)] size-full rounded-full bg-royal-blue-500 transition-transform duration-[660ms]"
 			:style="`transform: translateX(-${100 - modelValue}%)`"
 		/>

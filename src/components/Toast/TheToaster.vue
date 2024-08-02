@@ -31,7 +31,7 @@ const iconsMap = new Map<ToastVariants['variant'], string>([
 			:key="toast.id"
 			v-bind="toast"
 		>
-			<Icon class="size-5" :icon="iconsMap.get(toast.variant)" />
+			<Icon class="size-5" :icon="iconsMap.get(toast.variant) as string" />
 			<div class="!ml-0 flex flex-col items-start justify-start gap-1">
 				<ToastTitle v-if="toast.title">
 					{{ toast.title }}

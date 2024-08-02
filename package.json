@@ -27,15 +27,13 @@
 	"files": [
 		"dist/**"
 	],
-	"main": "./dist/mindenit-ui.umd.cjs",
-	"module": "./dist/mindenit-ui.js",
+	"module": "./dist/ui.js",
 	"exports": {
 		".": {
-			"import": "./dist/mindenit-ui.js",
-			"require": "./dist/mindenit-ui.umd.cjs",
+			"import": "./dist/ui.js",
 			"types": "./dist/index.d.ts"
 		},
-		"./style.css": "./dist/style.css",
+		"./style.css": "./dist/index.css",
 		"./tailwind.config.js": "./tailwind.config.js"
 	},
 	"types": "./dist/index.d.ts",
@@ -50,7 +48,7 @@
 	},
 	"scripts": {
 		"dev": "vite",
-		"build": "vue-tsc && vite build",
+		"build": "vue-tsc --p ./tsconfig.build.json && vite build",
 		"preview": "vite preview",
 		"test": "vitest",
 		"test:watch": "vitest --watch",
@@ -62,20 +60,17 @@
 		"format": "prettier --write ."
 	},
 	"dependencies": {
-		"@iconify/vue": "^4.1.1",
-		"@internationalized/date": "^3.5.5",
-		"@vueuse/core": "^10.9.0",
 		"class-variance-authority": "^0.7.0",
 		"clsx": "^2.1.0",
 		"radix-vue": "^1.9.2",
-		"tailwind-merge": "^2.2.2",
-		"vee-validate": "^4.12.6",
-		"vue": "^3.4.21"
+		"tailwind-merge": "^2.2.2"
 	},
 	"devDependencies": {
 		"@chromatic-com/storybook": "^1.6.1",
 		"@commitlint/cli": "^19.2.0",
 		"@commitlint/config-conventional": "^19.1.0",
+		"@iconify/vue": "^4.1.1",
+		"@internationalized/date": "^3.5.5",
 		"@storybook/addon-a11y": "^8.2.7",
 		"@storybook/addon-essentials": "^8.2.7",
 		"@storybook/addon-interactions": "^8.2.7",
@@ -91,6 +86,7 @@
 		"@typescript-eslint/parser": "^7.2.0",
 		"@vitejs/plugin-vue": "^5.0.4",
 		"@vue/test-utils": "^2.4.5",
+		"@vueuse/core": "^10.9.0",
 		"autoprefixer": "^10.4.18",
 		"axe-playwright": "^2.0.1",
 		"eslint": "^8.57.0",
@@ -100,17 +96,28 @@
 		"eslint-plugin-vue": "^9.23.0",
 		"husky": "^9.0.11",
 		"jsdom": "^24.0.0",
+		"lightningcss": "^1.25.1",
 		"lint-staged": "^15.2.2",
-		"postcss": "^8.4.35",
+		"postcss": "^8.4.40",
+		"postcss-cli": "^11.0.0",
 		"prettier": "3.2.5",
 		"prettier-plugin-tailwindcss": "^0.5.12",
 		"storybook": "^8.2.7",
 		"storybook-addon-vue-slots": "^0.9.29",
 		"tailwindcss": "^3.4.1",
 		"typescript": "^5.4.2",
-		"vite": "^5.1.6",
+		"vee-validate": "^4.12.6",
+		"vite": "^5.3.5",
 		"vite-plugin-dts": "^3.7.3",
 		"vitest": "^1.4.0",
+		"vue": "^3.4.21",
 		"vue-tsc": "^2.0.6"
+	},
+	"peerDependencies": {
+		"@iconify/vue": "^4.1.1",
+		"@internationalized/date": "^3.5.5",
+		"@vueuse/core": "^10.9.0",
+		"vee-validate": "^4.12.6",
+		"vue": "^3.4.21"
 	}
 }
