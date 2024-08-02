@@ -43,7 +43,6 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			'@': fileURLToPath(new URL('./src', import.meta.url))
-		},
-		dedupe: ['vue', '@vue/runtime-core']
+		}
 	}
 })
