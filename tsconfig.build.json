@@ -3,5 +3,11 @@
 	"compilerOptions": {
 		"declaration": true
 	},
-	"exclude": ["./src/**/**/*.spec.ts", "./src/**/**/*.stories.ts", "src/App.vue", "src/main.ts"]
+	"exclude": [
+		"./src/**/**/*.spec.ts",
+		"./src/**/**/*.stories.ts",
+		"src/App.vue",
+		"src/main.ts",
+		"src/nuxt.ts"
+	]
 }

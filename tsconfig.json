@@ -20,7 +20,7 @@
 			"@/*": ["./src/*"]
 		}
 	},
-	"include": ["src/**/*.ts", "src/**/*.vue"],
+	"include": ["src/**/*.ts", "src/**/*.vue", "plugins/nuxt.ts"],
 	"references": [{ "path": "./tsconfig.node.json" }],
 	"exclude": ["src/App.vue", "src/main.ts"]
 }
