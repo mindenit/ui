@@ -1,6 +1,6 @@
-import { resolve } from 'path'
 import { addComponentsDir, defineNuxtModule } from '@nuxt/kit'
 import { type NuxtModule } from '@nuxt/schema'
+import { resolve } from 'path'
 
 interface ModuleOptions {
 	prefix: string
@@ -19,7 +19,7 @@ const module: NuxtModule<ModuleOptions> = defineNuxtModule<ModuleOptions>({
 	},
 	setup(options) {
 		addComponentsDir({
-			path: resolve(__dirname, '../src/components'),
+			path: resolve(import.meta.dirname, '../src/components'),
 			prefix: options.prefix
 		})
 	}

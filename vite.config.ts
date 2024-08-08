@@ -20,8 +20,9 @@ export default defineConfig({
 		copyPublicDir: false,
 		assetsDir: '',
 		lib: {
-			entry: resolve(__dirname, 'src/index.ts'),
-			formats: ['es']
+			entry: resolve(import.meta.dirname, 'src/index.ts'),
+			name: 'mindenitUI',
+			fileName: 'ui'
 		},
 		rollupOptions: {
 			external: ['vue', '@iconify/vue', '@internationalized/date', '@vueuse/core', 'vee-validate'],
