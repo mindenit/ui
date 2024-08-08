@@ -1,8 +1,8 @@
 {
 	"name": "@mindenit/ui",
 	"description": "Components and tooling for Mindenit's design system",
-	"private": true,
-	"version": "0.0.0",
+	"private": false,
+	"version": "0.1.0",
 	"type": "module",
 	"license": "GPL-3.0",
 	"author": "Mindenit team",
@@ -67,7 +67,7 @@
 		"storybook": "storybook dev -p 6006",
 		"test-storybook": "test-storybook",
 		"build-storybook": "storybook build",
-		"prepare": "husky install",
+		"prepare": "husky",
 		"lint": "eslint .",
 		"format": "prettier --write ."
 	},
