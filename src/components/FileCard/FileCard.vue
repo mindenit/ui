@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import { Icon } from '@iconify/vue'
-import { Button } from '../Button'
 import { ProgressBar } from '../ProgressBar'
 import { ref } from 'vue'
+import { IconButton } from '../IconButton'
 
 const props = withDefaults(
 	defineProps<{
@@ -50,18 +50,14 @@ const value = ref(props.progress)
 					</span>
 				</div>
 			</div>
-			<Button
+			<IconButton
 				v-if="isUploaded"
-				class="size-8"
+				icon="ph:trash"
 				variant="ghost"
-				appearance="icon"
+				size="sm"
 				@click="$emit('remove')"
-			>
-				<Icon icon="ph:trash" />
-			</Button>
-			<Button v-else class="size-8" variant="ghost" appearance="icon" @click="$emit('cancel')">
-				<Icon icon="ph:x" />
-			</Button>
+			/>
+			<IconButton v-else icon="ph:x" variant="ghost" size="sm" @click="$emit('cancel')" />
 		</div>
 		<ProgressBar v-if="!isUploaded" class="w-full" v-model="value" :max="100" />
 	</div>

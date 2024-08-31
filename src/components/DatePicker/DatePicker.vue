@@ -25,6 +25,7 @@ import {
 import { computed } from 'vue'
 import { DatePickerProps } from '.'
 import { Button } from '../Button'
+import { IconButton } from '../IconButton'
 import { SelectContent, SelectItem, SelectRoot, SelectTrigger } from '../Select'
 
 const props = withDefaults(defineProps<DatePickerProps>(), {
@@ -92,23 +93,21 @@ const handlePreset = (value: string) => {
 						class="inline-flex w-full items-center justify-between rounded-lg bg-fiord-100 p-2 dark:bg-fiord-900"
 					>
 						<CalendarPrev as-child>
-							<Button
+							<IconButton
 								class="size-6 bg-white dark:bg-fiord-950 [&_svg]:size-4"
+								icon="ph:caret-left"
 								variant="ghost"
-								appearance="icon"
-							>
-								<Icon icon="ph:caret-left" />
-							</Button>
+								size="xs"
+							/>
 						</CalendarPrev>
 						<CalendarHeading class="text-sm text-black dark:text-white" />
 						<CalendarNext as-child>
-							<Button
+							<IconButton
 								class="size-6 bg-white dark:bg-fiord-950 [&_svg]:size-4"
+								icon="ph:caret-right"
 								variant="ghost"
-								appearance="icon"
-							>
-								<Icon icon="ph:caret-right" />
-							</Button>
+								size="xs"
+							/>
 						</CalendarNext>
 					</CalendarHeader>
 					<div class="flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">

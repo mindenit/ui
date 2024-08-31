@@ -6,5 +6,5 @@ const props = defineProps<TextProps>()
 </script>
 
 <template>
-	<p :class="cn(textVariants({ type }), props.class)"><slot /></p>
+	<p :class="cn(textVariants({ size }), props.class)"><slot /></p>
 </template>

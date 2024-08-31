@@ -3,7 +3,7 @@ import { HTMLAttributes } from 'vue'
 
 export const textVariants = cva('', {
 	variants: {
-		type: {
+		size: {
 			lead: 'text-xl font-normal leading-7 dark:text-white',
 			large: 'text-lg font-semibold leading-7 dark:text-white',
 			paragraph: 'font-regular text-base leading-7 dark:text-white',
@@ -12,14 +12,14 @@ export const textVariants = cva('', {
 		}
 	},
 	defaultVariants: {
-		type: 'paragraph'
+		size: 'paragraph'
 	}
 })
 
 type TextVariants = VariantProps<typeof textVariants>
 
 export interface TextProps {
-	type: TextVariants['type']
+	size: TextVariants['size']
 	class?: HTMLAttributes['class']
 }
 

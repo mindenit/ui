@@ -133,3 +133,31 @@ export const IconButton: Story = {
 		}
 	}
 }
+
+export const Large = Template.bind({})
+
+Large.args = {
+	variant: 'primary',
+	size: 'lg'
+}
+
+export const Medium = Template.bind({})
+
+Medium.args = {
+	variant: 'primary',
+	size: 'md'
+}
+
+export const Small = Template.bind({})
+
+Small.args = {
+	variant: 'primary',
+	size: 'sm'
+}
+
+export const ExtraSmall = Template.bind({})
+
+ExtraSmall.args = {
+	variant: 'primary',
+	size: 'xs'
+}

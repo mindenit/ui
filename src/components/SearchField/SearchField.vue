@@ -1,9 +1,9 @@
 <script lang="ts" setup>
 import { TextFieldRoot, TextFieldSlot, TextFieldInput } from '../TextField'
 import { Icon } from '@iconify/vue'
-import { Button } from '../Button'
 import { ref } from 'vue'
 import { useFocus } from '@vueuse/core'
+import { IconButton } from '../IconButton'
 
 const element = ref<HTMLInputElement | null>(null)
 const searchValue = ref('')
@@ -33,9 +33,13 @@ const handleUpdate = (value: string | number) => {
 			@update:model-value="handleUpdate"
 		/>
 		<TextFieldSlot>
-			<Button v-if="searchValue.length" variant="ghost" appearance="icon" @click="handleReset">
-				<Icon icon="ph:x" />
-			</Button>
+			<IconButton
+				v-if="searchValue.length"
+				icon="ph:x"
+				variant="ghost"
+				size="sm"
+				@click="handleReset"
+			/>
 		</TextFieldSlot>
 	</TextFieldRoot>
 </template>

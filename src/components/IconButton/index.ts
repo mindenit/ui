@@ -1,8 +1,8 @@
 import { cva, type VariantProps } from 'class-variance-authority'
 import { HTMLAttributes } from 'vue'
 
-export const buttonVariants = cva(
-	'font-regular box-border inline-flex select-none items-center justify-center gap-2 rounded-lg text-sm outline-none transition-all active:shadow-inner active:shadow-fiord-950/15 disabled:cursor-not-allowed disabled:shadow-none [&_svg]:size-5',
+export const iconButtonVariants = cva(
+	'font-regular box-border inline-flex select-none items-center justify-center rounded-lg text-sm outline-none transition-all active:shadow-inner active:shadow-fiord-950/15 disabled:cursor-not-allowed disabled:shadow-none [&_svg]:size-5',
 	{
 		variants: {
 			variant: {
@@ -15,39 +15,34 @@ export const buttonVariants = cva(
 				ghost:
 					'bg-transparent text-black hover:bg-fiord-200 focus:ring focus:ring-fiord-950/15 disabled:bg-transparent disabled:text-fiord-500 dark:text-white dark:hover:bg-fiord-800 dark:active:shadow-fiord-50/15 dark:disabled:bg-transparent dark:disabled:text-fiord-400'
 			},
-			appearance: {
-				default: 'w-auto min-w-32 px-4',
-				icon: 'size-10'
-			},
 			size: {
-				lg: 'h-10',
-				md: 'h-9',
-				sm: 'h-8',
-				xs: 'h-7'
+				lg: 'size-10',
+				md: 'size-9',
+				sm: 'size-8',
+				xs: 'size-7'
 			}
 		},
 		defaultVariants: {
 			variant: 'primary',
-			appearance: 'default',
 			size: 'lg'
 		}
 	}
 )
 
-export type ButtonVariants = VariantProps<typeof buttonVariants>
+export type IconButtonVariants = VariantProps<typeof iconButtonVariants>
 
-export interface ButtonProps {
+export interface IconButtonProps {
 	/**
 	 * Change the visual style of button
 	 */
-	variant?: ButtonVariants['variant']
-	size?: ButtonVariants['size']
-	appearance?: ButtonVariants['appearance']
+	variant?: IconButtonVariants['variant']
+	size?: IconButtonVariants['size']
 	class?: HTMLAttributes['class']
 	/**
 	 * Change the default rendered element for the one passed as a child, merging their props and behavior
 	 */
 	asChild?: boolean
+	icon: string
 }
 
-export { default as Button } from './TheButton.vue'
+export { default as IconButton } from './IconButton.vue'

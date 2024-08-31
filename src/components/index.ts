@@ -11,6 +11,7 @@ export * from './FileField'
 export * from './FileTrigger'
 export * from './Form'
 export { Heading, headingVariants } from './Heading'
+export { IconButton, iconButtonVariants } from './IconButton'
 export * from './ImageField'
 export { Link } from './Link'
 export * from './Pagination'
@@ -27,8 +28,6 @@ export { Text, textVariants } from './Text'
 export { TextAreaInput, TextAreaRoot } from './TextArea'
 export { TextFieldInput, TextFieldRoot, TextFieldSlot } from './TextField'
 export {
-	toast,
-	useToast,
 	Toast,
 	ToastAction,
 	ToastClose,
@@ -36,5 +35,7 @@ export {
 	ToastProvider,
 	ToastTitle,
 	ToastViewport,
-	Toaster
+	Toaster,
+	toast,
+	useToast
 } from './Toast'

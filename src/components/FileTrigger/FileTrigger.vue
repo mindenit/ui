@@ -41,7 +41,7 @@ const handleClick = (e: Event) => {
 </script>
 
 <template>
-	<Button variant="outlined" @click="handleClick">
+	<Button variant="outlined" size="md" @click="handleClick">
 		<slot></slot>
 	</Button>
 	<input

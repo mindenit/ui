@@ -19,7 +19,7 @@ type HeadingVariants = VariantProps<typeof headingVariants>
 
 export interface HeadingProps {
 	size: HeadingVariants['size']
-	class: HTMLAttributes['class']
+	class?: HTMLAttributes['class']
 }
 
 export { default as Heading } from './TheHeading.vue'

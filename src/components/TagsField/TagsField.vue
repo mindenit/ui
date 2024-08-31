@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { Icon } from '@iconify/vue'
 import {
 	TagsInputInput,
 	TagsInputItem,
@@ -10,8 +9,8 @@ import {
 	type TagsInputRootEmits,
 	type TagsInputRootProps
 } from 'radix-vue'
+import { IconButton } from '../IconButton'
 import { TextFieldInput, TextFieldRoot } from '../TextField'
-import { Button } from '../Button'
 
 const props = withDefaults(
 	defineProps<
@@ -45,9 +44,7 @@ const forwarded = useForwardPropsEmits(props, emits)
 			>
 				<TagsInputItemText />
 				<TagsInputItemDelete as-child>
-					<Button variant="ghost" appearance="icon" class="size-4 [&_svg]:size-3">
-						<Icon icon="ph:x" />
-					</Button>
+					<IconButton icon="ph:x" variant="ghost" size="xs" class="size-4 [&_svg]:size-3" />
 				</TagsInputItemDelete>
 			</TagsInputItem>
 		</div>

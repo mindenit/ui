@@ -59,7 +59,7 @@ const hasText = computed(() => props.title && props.description)
 			<h5 v-if="title" class="text-base leading-6 text-black">{{ title }}</h5>
 			<p v-if="description" class="text-sm leading-5 text-fiord-400">{{ description }}</p>
 			<div class="inline-flex gap-2" :class="{ 'mt-2': hasText }">
-				<Button v-if="file" variant="danger" @click="handleReset">Remove</Button>
+				<Button v-if="file" variant="danger" size="md" @click="handleReset">Remove</Button>
 				<FileTrigger :accepted-file-types="acceptedFileFormats" @update:files="handleSelect">
 					{{ uploadButtonFallback }}
 				</FileTrigger>
