@@ -1,5 +1,5 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
-import { TooltipContent, TooltipPortal, TooltipProvider, TooltipRoot, TooltipTrigger } from '.'
+import { TooltipContent, TooltipProvider, TooltipRoot, TooltipTrigger } from '.'
 
 const meta = {
 	title: 'Base/Tooltip',
@@ -10,7 +10,7 @@ const meta = {
 export default meta
 
 const Template: StoryFn<typeof TooltipProvider> = (args: unknown) => ({
-	components: { TooltipProvider, TooltipRoot, TooltipPortal, TooltipContent, TooltipTrigger },
+	components: { TooltipProvider, TooltipRoot, TooltipContent, TooltipTrigger },
 	setup() {
 		return { args }
 	},
@@ -20,16 +20,11 @@ const Template: StoryFn<typeof TooltipProvider> = (args: unknown) => ({
       <TooltipTrigger>
         Text sample
       </TooltipTrigger>
-      <TooltipPortal>
-        <TooltipContent
-          :side-offset="5"
-        >
-          This is tooltip!
-          <TooltipArrow
-            :width="8"
-          />
-        </TooltipContent>
-      </TooltipPortal>
+      <TooltipContent
+        :side-offset="5"
+      >
+        This is tooltip!
+      </TooltipContent>
     </TooltipRoot>
   </TooltipProvider>
 	`
