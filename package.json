@@ -2,7 +2,7 @@
 	"name": "@mindenit/ui",
 	"description": "Components and tooling for Mindenit's design system",
 	"private": false,
-	"version": "0.1.4",
+	"version": "0.1.5",
 	"type": "module",
 	"license": "GPL-3.0",
 	"author": "Mindenit team",

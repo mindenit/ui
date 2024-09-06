@@ -39,3 +39,4 @@ export {
 	toast,
 	useToast
 } from './Toast'
+export * from './Tooltip'
