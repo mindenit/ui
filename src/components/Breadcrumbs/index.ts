@@ -20,9 +20,9 @@ export type BreadcrumbItemVariants = VariantProps<typeof breadcrumbItemVariants>
 export type BreadcrumbItemProps = {
 	asChild?: boolean
 	href: string
-	active: BreadcrumbItemVariants['active']
+	active?: BreadcrumbItemVariants['active']
 }
 
-export { default as BreadcrumbItem } from './BreadcrumbItem.vue'
-export { default as BreadcrumbSeparator } from './BreadcrumbSeparator.vue'
-export { default as BreadcrumbRoot } from './TheBreadcrumb.vue'
+export { default as BreadcrumbsItem } from './BreadcrumbsItem.vue'
+export { default as BreadcrumbsSeparator } from './BreadcrumbsSeparator.vue'
+export { default as BreadcrumbsRoot } from './TheBreadcrumbs.vue'
