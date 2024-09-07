@@ -6,8 +6,12 @@ import {
 	type SelectContentEmits,
 	type SelectContentProps
 } from 'radix-vue'
+import { HTMLAttributes } from 'vue'
+import { cn } from '@/utils'
 
-interface Props extends Omit<SelectContentProps, 'align' | 'side' | 'sideOffset' | 'position'> {}
+interface Props extends Omit<SelectContentProps, 'align' | 'side' | 'sideOffset' | 'position'> {
+	class?: HTMLAttributes['class']
+}
 
 const props = defineProps<Props>()
 const emits = defineEmits<SelectContentEmits>()
@@ -19,7 +23,12 @@ const forwarded = useForwardPropsEmits(props, emits)
 	<SelectPortal>
 		<SelectContent
 			v-bind="forwarded"
-			class="z-50 box-border w-full min-w-[--radix-select-trigger-width] rounded-xl border border-fiord-300 bg-white p-2 dark:border-fiord-700 dark:bg-fiord-950"
+			:class="
+				cn(
+					'z-50 box-border w-full min-w-[--radix-select-trigger-width] rounded-xl border border-fiord-300 bg-white p-2 dark:border-fiord-700 dark:bg-fiord-950',
+					props.class
+				)
+			"
 			align="start"
 			side="bottom"
 			:side-offset="4"
