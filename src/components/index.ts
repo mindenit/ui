@@ -26,8 +26,13 @@ export * from './Switch'
 export * from './TabMenu'
 export * from './TagsField'
 export { Text, textVariants } from './Text'
-export { TextAreaInput, TextAreaRoot } from './TextArea'
-export { TextFieldInput, TextFieldRoot, TextFieldSlot } from './TextField'
+export { TextAreaInput, TextAreaRoot, type TextAreaInputComponent } from './TextArea'
+export {
+	TextFieldInput,
+	TextFieldRoot,
+	TextFieldSlot,
+	type TextFieldInputComponent
+} from './TextField'
 export {
 	Toast,
 	ToastAction,
