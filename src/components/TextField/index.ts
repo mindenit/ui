@@ -20,6 +20,10 @@ export const textFieldVariants = cva(
 
 export type TextFieldVariant = VariantProps<typeof textFieldVariants>
 
+export interface TextFieldInputComponent {
+	ref: HTMLInputElement | null
+}
+
 export interface TextFieldProps {
 	class?: HTMLAttributes['class']
 	error?: boolean

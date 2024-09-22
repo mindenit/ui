@@ -20,6 +20,10 @@ export const textAreaVariants = cva(
 
 export type TextAreaVariant = VariantProps<typeof textAreaVariants>
 
+export interface TextAreaInputComponent {
+	ref: HTMLTextAreaElement | null
+}
+
 export interface TextAreaProps {
 	class?: HTMLAttributes['class']
 	error?: boolean
