@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/vue'
-import type { Meta, StoryFn, StoryObj } from '@storybook/vue3'
+import type { Meta, StoryFn } from '@storybook/vue3'
 import { ToggleGroupItem, ToggleGroupRoot } from '.'
 
 const meta = {
@@ -30,8 +30,6 @@ const Template: StoryFn<typeof ToggleGroupRoot> = (args: unknown) => ({
   `
 })
 
-type Story = StoryObj
-
 export const Default = Template.bind({})
 Default.args = {
 	type: 'single',
@@ -45,10 +43,10 @@ const TemplateWithIcons: StoryFn<typeof ToggleGroupRoot> = (args: unknown) => ({
 	},
 	template: `
     <ToggleGroupRoot v-bind="args">
-      <ToggleGroupItem value="item-1" withIcon>
+      <ToggleGroupItem value="item-1">
         <Icon icon="ph:pencil" />
       </ToggleGroupItem>
-      <ToggleGroupItem value="item-2" withIcon>
+      <ToggleGroupItem value="item-2">
         <Icon icon="ph:eye" />
       </ToggleGroupItem>
     </ToggleGroupRoot>
@@ -58,5 +56,6 @@ const TemplateWithIcons: StoryFn<typeof ToggleGroupRoot> = (args: unknown) => ({
 export const WithIcons = TemplateWithIcons.bind({})
 WithIcons.args = {
 	type: 'single',
-	defaultValue: 'item-1'
+	defaultValue: 'item-1',
+	appearance: 'icon'
 }

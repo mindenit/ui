@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { ToggleGroupItem, ToggleGroupItemProps, useForwardPropsEmits } from 'radix-vue'
+import { computed, inject } from 'vue'
 
-interface Props extends ToggleGroupItemProps {
-	withIcon?: boolean
-}
-
-const props = withDefaults(defineProps<Props>(), { withIcon: false })
+const props = defineProps<ToggleGroupItemProps>()
 const forwerded = useForwardPropsEmits(props)
+
+const context = inject<{ appearance: 'default' | 'icon' }>('trigger-root-context')
+
+const withIcon = computed(() => context?.appearance === 'icon')
 </script>
 
 <template>

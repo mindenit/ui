@@ -1,15 +1,21 @@
 <script setup lang="ts">
 import {
-	ToggleGroupRootProps,
-	ToggleGroupRootEmits,
 	ToggleGroupRoot,
+	ToggleGroupRootEmits,
+	ToggleGroupRootProps,
 	useForwardPropsEmits
 } from 'radix-vue'
-import { ref } from 'vue'
+import { provide } from 'vue'
 
-const props = defineProps<ToggleGroupRootProps>()
+interface Props extends ToggleGroupRootProps {
+	appearance?: 'default' | 'icon'
+}
+
+const props = withDefaults(defineProps<Props>(), { appearance: 'default' })
 const emits = defineEmits<ToggleGroupRootEmits>()
 const forwerded = useForwardPropsEmits(props, emits)
+
+provide('trigger-root-context', { appearance: props.appearance })
 </script>
 
 <template>
