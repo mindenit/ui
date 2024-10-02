@@ -2,7 +2,7 @@
 	"name": "@mindenit/ui",
 	"description": "Components and tooling for Mindenit's design system",
 	"private": false,
-	"version": "0.1.9",
+	"version": "0.1.10",
 	"type": "module",
 	"license": "GPL-3.0",
 	"author": "Mindenit team",
@@ -30,10 +30,14 @@
 	"module": "./dist/ui.js",
 	"exports": {
 		".": {
-			"default": "./dist/ui.umd.cjs",
-			"import": "./dist/ui.js",
-			"require": "./dist/ui.umd.cjs",
-			"types": "./dist/index.d.ts"
+			"import": {
+				"default": "./dist/ui.js",
+				"types": "./dist/index.d.ts"
+			},
+			"require": {
+				"default": "./dist/ui.umd.cjs",
+				"types": "./dist/index.d.ts"
+			}
 		},
 		"./nuxt": {
 			"import": {
@@ -45,8 +49,7 @@
 				"types": "./dist/nuxt.d.cts"
 			}
 		},
-		"./index.css": "./dist/index.css",
-		"./tailwind.config.js": "./tailwind.config.js"
+		"./index.css": "./dist/index.css"
 	},
 	"types": "./dist/index.d.ts",
 	"engines": {
