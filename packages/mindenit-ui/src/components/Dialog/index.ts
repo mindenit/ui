@@ -1,0 +1,7 @@
+export { default as DialogBody } from './DialogBody.vue'
+export { default as DialogClose } from './DialogClose.vue'
+export { default as DialogContent } from './DialogContent.vue'
+export { default as DialogFooter } from './DialogFooter.vue'
+export { default as DialogHeader } from './DialogHeader.vue'
+export { default as DialogRoot } from './DialogRoot.vue'
+export { default as DialogTrigger } from './DialogTrigger.vue'
