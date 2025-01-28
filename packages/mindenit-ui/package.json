@@ -29,7 +29,8 @@
 		"release:publish": "pnpm publish --access public",
 		"storybook": "storybook dev -p 6006",
 		"build-storybook": "storybook build",
-		"storybook:styles": "npx @tailwindcss/cli -i ./src/assets/index.css -o ./.storybook/index.css"
+		"storybook:styles": "npx @tailwindcss/cli -i ./src/assets/index.css -o ./.storybook/index.css",
+		"storybook:styles:watch": "npx @tailwindcss/cli -i ./src/assets/index.css -o ./.storybook/index.css --watch"
 	},
 	"peerDependencies": {
 		"@internationalized/date": "^3.7.0",

@@ -969,6 +969,9 @@
   .border-amaranth-500 {
     border-color: var(--color-amaranth-500);
   }
+  .border-amber-400 {
+    border-color: var(--color-amber-400);
+  }
   .border-christi-400 {
     border-color: var(--color-christi-400);
   }
@@ -990,8 +993,14 @@
   .border-b-fiord-200 {
     border-bottom-color: var(--color-fiord-200);
   }
+  .bg-amaranth-100 {
+    background-color: var(--color-amaranth-100);
+  }
   .bg-amaranth-500 {
     background-color: var(--color-amaranth-500);
+  }
+  .bg-amber-100 {
+    background-color: var(--color-amber-100);
   }
   .bg-fiord-100 {
     background-color: var(--color-fiord-100);
@@ -1004,6 +1013,9 @@
   }
   .bg-fiord-950\/20 {
     background-color: color-mix(in oklab, var(--color-fiord-950) 20%, transparent);
+  }
+  .bg-royal-blue-100 {
+    background-color: var(--color-royal-blue-100);
   }
   .bg-royal-blue-500 {
     background-color: var(--color-royal-blue-500);
@@ -2176,9 +2188,19 @@
       max-width: 420px;
     }
   }
+  .dark\:border-amaranth-600 {
+    &:where(.dark, .dark *) {
+      border-color: var(--color-amaranth-600);
+    }
+  }
   .dark\:border-amaranth-700 {
     &:where(.dark, .dark *) {
       border-color: var(--color-amaranth-700);
+    }
+  }
+  .dark\:border-amber-700 {
+    &:where(.dark, .dark *) {
+      border-color: var(--color-amber-700);
     }
   }
   .dark\:border-fiord-600 {
@@ -2196,6 +2218,16 @@
       border-color: var(--color-fiord-800);
     }
   }
+  .dark\:border-royal-blue-600 {
+    &:where(.dark, .dark *) {
+      border-color: var(--color-royal-blue-600);
+    }
+  }
+  .dark\:border-royal-blue-700 {
+    &:where(.dark, .dark *) {
+      border-color: var(--color-royal-blue-700);
+    }
+  }
   .dark\:border-t-fiord-800 {
     &:where(.dark, .dark *) {
       border-top-color: var(--color-fiord-800);
@@ -2204,6 +2236,16 @@
   .dark\:border-b-fiord-800 {
     &:where(.dark, .dark *) {
       border-bottom-color: var(--color-fiord-800);
+    }
+  }
+  .dark\:bg-amaranth-950 {
+    &:where(.dark, .dark *) {
+      background-color: var(--color-amaranth-950);
+    }
+  }
+  .dark\:bg-amber-950 {
+    &:where(.dark, .dark *) {
+      background-color: var(--color-amber-950);
     }
   }
   .dark\:bg-fiord-50\/20 {
@@ -2224,6 +2266,11 @@
   .dark\:bg-fiord-950 {
     &:where(.dark, .dark *) {
       background-color: var(--color-fiord-950);
+    }
+  }
+  .dark\:bg-royal-blue-950 {
+    &:where(.dark, .dark *) {
+      background-color: var(--color-royal-blue-950);
     }
   }
   .dark\:fill-fiord-900 {
