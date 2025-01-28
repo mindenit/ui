@@ -1,7 +1,8 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
-import { AlertProps, AlertVariants, alertVariants } from '.'
+import type { AlertProps, AlertVariants } from '.'
 import { Icon } from '@iconify/vue'
+import { computed } from 'vue'
+import { alertVariants } from '.'
 
 const props = withDefaults(defineProps<AlertProps>(), { status: 'feature' })
 
@@ -10,7 +11,7 @@ const iconsMap = new Map<AlertVariants['status'], string>([
 	['feature', 'ph:magic-wand-fill'],
 	['info', 'ph:info-fill'],
 	['success', 'ph:check-circle-fill'],
-	['warning', 'ph:warning-fill']
+	['warning', 'ph:warning-fill'],
 ])
 
 const icon = computed(() => iconsMap.get(props.status) as string)
@@ -20,7 +21,7 @@ const icon = computed(() => iconsMap.get(props.status) as string)
 	<div :class="alertVariants({ status })" role="alert">
 		<Icon :icon="icon" />
 		<div class="flex w-full flex-col gap-1">
-			<slot></slot>
+			<slot />
 		</div>
 	</div>
 </template>

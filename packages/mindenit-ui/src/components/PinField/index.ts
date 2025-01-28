@@ -1,4 +1,4 @@
-import { PinInputRootProps } from 'reka-ui'
+import type { PinInputRootProps } from 'reka-ui'
 
 export interface PinFieldProps
 	extends Omit<PinInputRootProps, 'type' | 'placeholder' | 'otp' | 'asChild'> {

@@ -1,5 +1,5 @@
 export default defineNuxtConfig({
-  modules: ['@midenit/ui/nuxt'],
+  modules: ['@vee-validate/nuxt', '@midenit/ui/nuxt', '@nuxt/icon'],
   css: ['~/assets/css/main.css'],
   mindenit: {
     prefix: 'U',

@@ -23,7 +23,7 @@ export default defineConfig({
       },
     },
     rollupOptions: {
-      external: ['vue', 'tailwind-variant', '@nuxt/kit', '@tailwindcss/vite'],
+      external: ['vue', 'tailwind-variant', '@nuxt/kit', '@tailwindcss/vite', 'vee-validate', '@internationalized/date'],
       output: {
         assetFileNames: (chunkInfo) => {
 					if (chunkInfo.name === 'ui.css') return 'index.css'

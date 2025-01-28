@@ -1,15 +1,16 @@
 <script lang="ts" setup>
-import { cn } from '../../utils'
+import type { AvatarProps } from '.'
 import { AvatarFallback, AvatarImage, AvatarRoot } from 'reka-ui'
 import { computed } from 'vue'
-import { avatarVariants, AvatarProps } from '.'
+import { avatarVariants } from '.'
+import { cn } from '../../utils'
 
 const props = withDefaults(defineProps<AvatarProps>(), { size: '32px', fallback: '' })
 
 const computedSize = computed(() => {
 	return {
 		width: props.size,
-		height: props.size
+		height: props.size,
 	}
 })
 

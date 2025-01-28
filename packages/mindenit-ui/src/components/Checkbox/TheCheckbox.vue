@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import type {
-	CheckboxIndicator,
-	CheckboxRoot,
-	type CheckboxRootEmits,
-	CheckboxRootProps,
-	useForwardPropsEmits,
+import type { CheckboxRootEmits, CheckboxRootProps,
 } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { Icon } from '@iconify/vue'
+import {
+	CheckboxIndicator,
+	CheckboxRoot,
+	useForwardPropsEmits,
+} from 'reka-ui'
 
 export interface CheckboxProps extends CheckboxRootProps {
 	class?: HTMLAttributes['class']

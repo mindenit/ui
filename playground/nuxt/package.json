@@ -10,7 +10,10 @@
 		"preview": "nuxt preview"
 	},
 	"dependencies": {
+		"@internationalized/date": "^3.7.0",
 		"@midenit/ui": "link:../../packages/mindenit-ui",
+		"@nuxt/icon": "^1.10.3",
+		"@vee-validate/nuxt": "^4.15.0",
 		"nuxt": "^3.14.1592",
 		"vue": "latest",
 		"vue-router": "latest"

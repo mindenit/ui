@@ -1,11 +1,12 @@
 import type { Meta, StoryFn } from '@storybook/vue3'
-import { TextAreaInput, TextAreaProps, TextAreaRoot } from '.'
+import type { TextAreaProps } from '.'
+import { TextAreaInput, TextAreaRoot } from '.'
 import { FormLabel } from '../Form'
 
 const meta = {
 	title: 'Forms/TextArea',
 	component: TextAreaInput,
-	tags: ['autodocs']
+	tags: ['autodocs'],
 } satisfies Meta<typeof TextAreaInput>
 
 export default meta
@@ -19,24 +20,20 @@ const Template: StoryFn<TextAreaProps> = (args: unknown) => ({
 		<TextAreaRoot :error="args.error">
 			<TextAreaInput v-bind="args" />
 		</TextAreaRoot>
-	`
+	`,
 })
 
 export const Default: StoryFn<typeof TextAreaInput> = Template.bind({})
 Default.args = {
-	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-	// @ts-ignore
 	placeholder: 'Write something...',
-	disabled: false
+	disabled: false,
 }
 
 export const Error = Template.bind({})
 Error.args = {
-	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-	// @ts-ignore
 	placeholder: 'Write something...',
 	disabled: false,
-	error: true
+	error: true,
 }
 
 const WithLabelTemplate: StoryFn<typeof TextAreaInput> = (args: unknown) => ({
@@ -51,13 +48,11 @@ const WithLabelTemplate: StoryFn<typeof TextAreaInput> = (args: unknown) => ({
         <TextAreaInput v-bind="args" id="input" type="text" /> 
       </TextAreaRoot>
     </div>
-  `
+  `,
 })
 
 export const WithLabel = WithLabelTemplate.bind({})
 WithLabel.args = {
-	// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-	// @ts-ignore
 	placeholder: 'Write name...',
-	disabled: false
+	disabled: false,
 }

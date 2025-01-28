@@ -1,11 +1,11 @@
 <script lang="ts" setup>
 import type {
+	AcceptableValue,
 	CalendarRootEmits,
 } from 'reka-ui'
 import type { DatePickerProps } from './index.ts'
-import { cn } from '../../utils'
 import { Icon } from '@iconify/vue'
-import { type DateValue, getLocalTimeZone, today } from '@internationalized/date'
+import { DateFormatter, type DateValue, getLocalTimeZone, today } from '@internationalized/date'
 import {
 	CalendarCell,
 	CalendarCellTrigger,
@@ -26,6 +26,7 @@ import {
 	useForwardPropsEmits,
 } from 'reka-ui'
 import { computed } from 'vue'
+import { cn } from '../../utils'
 import { Button } from '../Button'
 import { IconButton } from '../IconButton'
 import { SelectContent, SelectItem, SelectRoot, SelectTrigger } from '../Select'
@@ -36,10 +37,14 @@ const props = withDefaults(defineProps<DatePickerProps>(), {
 	presetsPlaceholder: 'Select preset',
 })
 
+const df = new DateFormatter(props.locale, {
+  dateStyle: 'long',
+})
+
 const emits = defineEmits<CalendarRootEmits>()
 
 const delegatedProps = computed(() => {
-	const { placeholder, formatFn, ...delegated } = props
+	const { placeholder, ...delegated } = props
 
 	return delegated
 })
@@ -48,15 +53,15 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits)
 
 const btnFallback = computed(() => {
 	return props.modelValue
-		? props.formatFn((props.modelValue as DateValue).toDate(getLocalTimeZone()))
+		? df.formatToParts((props.modelValue as DateValue).toDate(getLocalTimeZone()))
 		: props.placeholder
 })
 
-const handlePreset = (value: string) => {
+const handlePreset = (value: AcceptableValue) => {
 	if (!value)
 		return
 
-	const newDate = today(getLocalTimeZone()).add({ days: Number(value) })
+	const newDate = today(getLocalTimeZone()).add({ days: Number(value.toString()) })
 
 	emits('update:modelValue', newDate)
 }

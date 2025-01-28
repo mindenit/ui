@@ -32,7 +32,8 @@
 		"storybook:styles": "npx @tailwindcss/cli -i ./src/assets/index.css -o ./.storybook/index.css"
 	},
 	"peerDependencies": {
-		"vee-validate": "^4.15.0",
+		"@internationalized/date": "^3.7.0",
+		"vee-validate": ">=4.x.x",
 		"vue": ">=3.2.x"
 	},
 	"dependencies": {
@@ -48,6 +49,7 @@
 	"devDependencies": {
 		"@chromatic-com/storybook": "^3.2.4",
 		"@iconify/vue": "^4.3.0",
+		"@internationalized/date": "^3.7.0",
 		"@nuxt/kit": "^3.15.3",
 		"@nuxt/schema": "^3.15.3",
 		"@storybook/addon-essentials": "^8.5.2",

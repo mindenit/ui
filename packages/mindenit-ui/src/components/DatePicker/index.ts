@@ -7,7 +7,6 @@ export interface DatePickerPreset {
 
 export interface DatePickerProps extends Omit<CalendarRootProps, 'placeholder' | 'fixedWeeks'> {
 	placeholder?: string
-	formatFn: (value: Date) => string
 	presets?: DatePickerPreset[]
 	presetsPlaceholder?: string
 }
