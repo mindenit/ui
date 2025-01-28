@@ -1,12 +1,12 @@
 {
-	"name": "huchet-vue",
+	"name": "mindenit-ui",
 	"type": "module",
 	"version": "0.1.4",
 	"private": true,
 	"scripts": {
 		"ui:build": "pnpm --filter @mindenit/ui run build",
 		"ui:test": "pnpm --filter @mindenit/ui run test",
-		"ui:storybook": "pnpm --filter @mindenit/ui run stirybook",
+		"ui:storybook": "pnpm --filter @mindenit/ui run storybook",
 		"playground:vue": "pnpm --filter vue-playground run dev",
 		"playground:nuxt": "pnpm --filter nuxt-playground run dev -o",
 		"lint": "eslint .",

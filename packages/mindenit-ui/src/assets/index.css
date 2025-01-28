@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-royal-blue-50: oklch(96.57% 0.0161 272.48);
   --color-royal-blue-100: oklch(93.23% 0.03219852465218342 271.05661065771227);
@@ -41,7 +43,7 @@
   --color-amaranth-100: oklch(94.78% 0.0217 17.54);
   --color-amaranth-200: oklch(89.83% 0.0418 15.68);
   --color-amaranth-300: oklch(81.99% 0.0776 15.58);
-  --color-amaranth-400: hsl(355.01 71% 71%);
+  --color-amaranth-400: oklch(71.93% 0.1291 15.57);
   --color-amaranth-500: oklch(60.45% 0.1884 19.38);
   --color-amaranth-600: oklch(56.12% 0.1835 17.28);
   --color-amaranth-700: oklch(49.1% 0.1668 16.09);
@@ -56,10 +58,14 @@
   --animate-slide-down: slide-down 300ms cubic-bezier(0.87, 0, 0.13, 1);
   --animate-slide-up: slide-up 300ms cubic-bezier(0.87, 0, 0.13, 1);
   --animate-content-show: content-show 247ms cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-slide-down-and-fade: slide-down-and-fade 400ms cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-slide-up-and-fade: slide-up-and-fade 400ms cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-slide-left-and-fade: slide-left-and-fade 400ms cubic-bezier(0.16, 1, 0.3, 1);
-  --animate-slide-right-and-fade: slide-right-and-fade 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slide-down-and-fade: slide-down-and-fade 400ms
+    cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slide-up-and-fade: slide-up-and-fade 400ms
+    cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slide-left-and-fade: slide-left-and-fade 400ms
+    cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slide-right-and-fade: slide-right-and-fade 400ms
+    cubic-bezier(0.16, 1, 0.3, 1);
 
   @keyframes fade-in {
     0% {
@@ -116,7 +122,7 @@
     100% {
       opacity: 1;
       transform: translateY(0);
-    }    
+    }
   }
 
   @keyframes slide-left-and-fade {
@@ -127,7 +133,7 @@
     100% {
       opacity: 1;
       transform: translateX(0);
-    }    
+    }
   }
 
   @keyframes slide-up-and-fade {
@@ -138,7 +144,7 @@
     100% {
       opacity: 1;
       transform: translateY(0);
-    }    
+    }
   }
 
   @keyframes slide-right-and-fade {
@@ -149,6 +155,6 @@
     100% {
       opacity: 1;
       transform: translateX(0);
-    }    
+    }
   }
 }

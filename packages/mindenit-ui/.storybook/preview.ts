@@ -1,5 +1,7 @@
 import type { Preview } from "@storybook/vue3";
-import '../src/assets/index.css'
+import { withThemeByClassName } from '@storybook/addon-themes'
+import './index.css'
+import './normalize.css'
 
 const preview: Preview = {
   parameters: {
@@ -11,5 +13,15 @@ const preview: Preview = {
     },
   },
 };
+
+export const decorators = [
+	withThemeByClassName({
+		themes: {
+			light: '',
+			dark: 'dark'
+		},
+		defaultTheme: 'light'
+	})
+]
 
 export default preview;
