@@ -1,3 +1,9 @@
+.dark {
+  body {
+    background: oklch(17.13% 0.0362 269.5);
+  }
+}
+
 body {
-  @apply bg-white dark:bg-fiord-950;
+  background: #fff;
 }
