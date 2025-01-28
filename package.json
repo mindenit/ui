@@ -1,143 +1,26 @@
 {
-	"name": "@mindenit/ui",
-	"description": "Components and tooling for Mindenit's design system",
-	"private": false,
-	"version": "0.1.11",
+	"name": "huchet-vue",
 	"type": "module",
-	"license": "GPL-3.0",
-	"author": "Mindenit team",
-	"homepage": "https://github.com/mindenit/ui",
-	"maintainers": [
-		{
-			"name": "Kyrylo Savieliev",
-			"url": "https://github.com/OneLiL05"
-		},
-		{
-			"name": "Roman Trashutin",
-			"url": "https://github.com/perkinson1251"
-		}
-	],
-	"repository": {
-		"type": "git",
-		"url": "git@github.com:mindenit/ui.git"
-	},
-	"bugs": {
-		"url": "https://github.com/mindenit/ui/issues"
-	},
-	"files": [
-		"dist/**"
-	],
-	"module": "./dist/ui.js",
-	"exports": {
-		".": {
-			"import": {
-				"default": "./dist/ui.js",
-				"types": "./dist/index.d.ts"
-			},
-			"require": {
-				"default": "./dist/ui.umd.cjs",
-				"types": "./dist/index.d.ts"
-			}
-		},
-		"./nuxt": {
-			"import": {
-				"default": "./dist/nuxt.mjs",
-				"types": "./dist/nuxt.d.mts"
-			},
-			"require": {
-				"default": "./dist/nuxt.cjs",
-				"types": "./dist/nuxt.d.cts"
-			}
-		},
-		"./index.css": "./dist/index.css"
-	},
-	"types": "./dist/index.d.ts",
-	"engines": {
-		"node": ">=20.x"
-	},
-	"lint-staged": {
-		"**/*.{ts,vue}": [
-			"eslint --fix"
-		],
-		"**/*": "prettier --write --ignore-unknown"
-	},
+	"version": "0.1.4",
+	"private": true,
 	"scripts": {
-		"dev": "vite",
-		"build": "vue-tsc --p ./tsconfig.build.json && vite build",
-		"build:nuxt": "unbuild",
-		"stub:nuxt": "unbuild --stub",
-		"preview": "vite preview",
-		"test": "vitest",
-		"test:watch": "vitest --watch",
-		"storybook": "storybook dev -p 6006",
-		"test-storybook": "test-storybook",
-		"build-storybook": "storybook build",
-		"prepare": "husky",
+		"ui:build": "pnpm --filter @mindenit/ui run build",
+		"ui:test": "pnpm --filter @mindenit/ui run test",
+		"ui:storybook": "pnpm --filter @mindenit/ui run stirybook",
+		"playground:vue": "pnpm --filter vue-playground run dev",
+		"playground:nuxt": "pnpm --filter nuxt-playground run dev -o",
 		"lint": "eslint .",
-		"format": "prettier --write ."
-	},
-	"dependencies": {
-		"@nuxt/kit": "^3.12.4",
-		"@nuxt/schema": "^3.12.4",
-		"class-variance-authority": "^0.7.0",
-		"clsx": "^2.1.0",
-		"radix-vue": "^1.9.2",
-		"tailwind-merge": "^2.2.2",
-		"unbuild": "^2.0.0"
+		"lint:fix": "eslint --fix .",
+		"typecheck": "pnpm --filter './packages/**' run typecheck",
+		"release": "pnpm run lint && pnpm run typecheck && pnpm run test && changelogen --output CHANGELOG.md && jiti scripts/release.ts && pnpm -r run release:publish && git push --follow-tags"
 	},
 	"devDependencies": {
-		"@chromatic-com/storybook": "^1.6.1",
-		"@commitlint/cli": "^19.2.0",
-		"@commitlint/config-conventional": "^19.1.0",
-		"@iconify/vue": "^4.1.1",
-		"@internationalized/date": "^3.5.5",
-		"@storybook/addon-a11y": "^8.2.7",
-		"@storybook/addon-essentials": "^8.2.7",
-		"@storybook/addon-interactions": "^8.2.7",
-		"@storybook/addon-links": "^8.2.7",
-		"@storybook/addon-themes": "^8.2.7",
-		"@storybook/blocks": "^8.2.7",
-		"@storybook/test": "^8.2.7",
-		"@storybook/test-runner": "^0.19.1",
-		"@storybook/vue3": "^8.2.7",
-		"@storybook/vue3-vite": "^8.2.7",
-		"@types/node": "^20.11.28",
-		"@typescript-eslint/eslint-plugin": "^7.2.0",
-		"@typescript-eslint/parser": "^7.2.0",
-		"@vitejs/plugin-vue": "^5.0.4",
-		"@vue/test-utils": "^2.4.5",
-		"@vueuse/core": "^10.9.0",
-		"autoprefixer": "^10.4.18",
-		"axe-playwright": "^2.0.1",
-		"eslint": "^8.57.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-prettier": "^5.1.3",
-		"eslint-plugin-tailwindcss": "^3.15.1",
-		"eslint-plugin-vue": "^9.23.0",
-		"husky": "^9.0.11",
-		"jsdom": "^24.0.0",
-		"lightningcss": "^1.25.1",
-		"lint-staged": "^15.2.2",
-		"postcss": "^8.4.40",
-		"postcss-cli": "^11.0.0",
-		"prettier": "3.2.5",
-		"prettier-plugin-tailwindcss": "^0.5.12",
-		"storybook": "^8.2.7",
-		"storybook-addon-vue-slots": "^0.9.29",
-		"tailwindcss": "^3.4.1",
-		"typescript": "^5.4.2",
-		"vee-validate": "^4.12.6",
-		"vite": "^5.3.5",
-		"vite-plugin-dts": "^3.7.3",
-		"vitest": "^1.4.0",
-		"vue": "3.4.36",
-		"vue-tsc": "^2.0.6"
-	},
-	"peerDependencies": {
-		"@iconify/vue": ">= 4.1.x",
-		"@internationalized/date": ">= 3.5.x",
-		"@vueuse/core": ">= 10.9.x",
-		"vee-validate": ">= 4.12.x",
-		"vue": ">= 3.2.x"
+		"@antfu/eslint-config": "^3.9.2",
+		"bumpp": "^9.8.1",
+		"changelogen": "^0.5.7",
+		"eslint": "^9.15.0",
+		"fs-extra": "^11.2.0",
+		"jiti": "^2.4.0",
+		"typescript": "^5.7.2"
 	}
 }

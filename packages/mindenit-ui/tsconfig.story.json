@@ -1,0 +1,10 @@
+{
+	"extends": "./tsconfig.app.json",
+	"compilerOptions": {
+		"moduleResolution": "node"
+	},
+	"include": [
+		"src/**/*.story.vue"
+	],
+	"exclude": []
+}
