@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import type { HTMLAttributes } from 'vue'
 import {
 	SelectContent,
 	type SelectContentEmits,
 	type SelectContentProps,
 	SelectPortal,
 	useForwardPropsEmits,
-} from 'reka-ui'
-import { cn } from '../../utils'
+} from 'reka-ui';
+import type { HTMLAttributes } from 'vue';
+import { cn } from '../../utils';
 
 interface Props extends Omit<SelectContentProps, 'align' | 'side' | 'sideOffset' | 'position'> {
 	class?: HTMLAttributes['class']
@@ -25,7 +25,9 @@ const forwarded = useForwardPropsEmits(props, emits)
 			v-bind="forwarded"
 			:class="
 				cn(
-					'z-50 box-border w-full rounded-xl border border-fiord-300 bg-white p-2 dark:border-fiord-700 dark:bg-fiord-950',
+					'z-50 box-border w-full rounded-xl border border-fiord-300 shadow-[0px_4px_6px_-1px_#67738880] bg-white p-2 dark:border-fiord-700 dark:bg-fiord-950',
+					'data-[state=open]:animate-slide-down-and-fade',
+					'data-[state=closed]:animate-slide-up-and-fade',
 					props.class,
 				)
 			"
