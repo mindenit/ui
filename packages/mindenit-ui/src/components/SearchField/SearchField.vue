@@ -9,10 +9,13 @@ const props = defineProps<{
 	modelValue?: string
 	defaultValue?: string
 }>()
+
 const emits = defineEmits<{
 	'update:modelValue': [payload: string]
 }>()
+
 const element = ref<HTMLInputElement | null>(null)
+
 const modelValue = useVModel(props, 'modelValue', emits, {
 	passive: true,
 	defaultValue: props.defaultValue,

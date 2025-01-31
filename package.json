@@ -7,6 +7,7 @@
 		"ui:build": "pnpm --filter @mindenit/ui run build",
 		"ui:test": "pnpm --filter @mindenit/ui run test",
 		"ui:storybook": "pnpm --filter @mindenit/ui run storybook",
+		"ui:storybook:styles:watch": "pnpm --filter @mindenit/ui run storybook:styles:watch",
 		"playground:vue": "pnpm --filter vue-playground run dev",
 		"playground:nuxt": "pnpm --filter nuxt-playground run dev -o",
 		"lint": "eslint .",
