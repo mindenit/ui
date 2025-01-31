@@ -2,7 +2,7 @@ import type { HTMLAttributes } from 'vue'
 import { tv, type VariantProps } from 'tailwind-variants'
 
 export const headingVariants = tv({
-	base: 'text-black dark:text-white',
+	base: 'text-black dark:text-white selection:bg-royal-blue-200 dark:selection:bg-royal-blue-900',
 	variants: {
 		size: {
 			large: 'text-5xl font-extrabold leading-[3rem] tracking-[1.2%]',
