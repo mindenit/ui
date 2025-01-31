@@ -12,7 +12,7 @@ const props = defineProps<SelectItemProps>()
 	>
 		<SelectItemText><slot /></SelectItemText>
 		<SelectItemIndicator>
-			<Icon class="size-4" icon="ph:check" />
+			<Icon class="size-4" icon="lucide:check" />
 		</SelectItemIndicator>
 	</SelectItem>
 </template>

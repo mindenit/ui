@@ -13,7 +13,7 @@ const props = withDefaults(
 		acceptedFileFormats?: string[]
 		maxSize?: number
 	}>(),
-	{ fallbackIcon: 'ph:image-fill', maxSize: 2 * 1024 * 1024 },
+	{ fallbackIcon: 'lucide:image', maxSize: 2 * 1024 * 1024 },
 )
 
 const emits = defineEmits<{

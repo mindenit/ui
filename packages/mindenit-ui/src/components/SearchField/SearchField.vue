@@ -32,13 +32,13 @@ const handleReset = () => {
 <template>
 	<TextFieldRoot>
 		<TextFieldSlot>
-			<Icon icon="ph:magnifying-glass" />
+			<Icon icon="lucide:search" />
 		</TextFieldSlot>
 		<TextFieldInput v-bind="$attrs" id="search" ref="element" v-model="modelValue" type="search" />
 		<TextFieldSlot>
 			<IconButton
 				v-if="modelValue?.length"
-				icon="ph:x"
+				icon="lucide:x"
 				variant="ghost"
 				size="sm"
 				@click="handleReset"

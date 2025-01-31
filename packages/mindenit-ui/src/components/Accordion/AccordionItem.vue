@@ -24,7 +24,7 @@ const forwarded = useForwardProps(props)
 			>
 				<slot name="title" />
 				<Icon
-					icon="ph:plus"
+					icon="lucide:plus"
 					class="size-5 transition-transform group-data-[state=open]:rotate-45"
 				/>
 			</AccordionTrigger>

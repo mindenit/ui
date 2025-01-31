@@ -1,5 +1,5 @@
-import { Icon } from '@iconify/vue'
 import type { Meta, StoryFn } from '@storybook/vue3'
+import { Icon } from '@iconify/vue'
 import { FormLabel } from '../Form'
 import TextFieldInput from './TextFieldInput.vue'
 import TextFieldRoot from './TextFieldRoot.vue'
@@ -50,7 +50,7 @@ const WithSlotTemplate: StoryFn<typeof TextFieldInput> = (args: unknown) => ({
 	template: `
     <TextFieldRoot>
       <TextFieldSlot>
-        <Icon icon="ph:magnifying-glass" />
+        <Icon icon="lucide:search" />
       </TextFieldSlot>
       <TextFieldInput v-bind="args" type="text" /> 
     </TextFieldRoot>
@@ -75,7 +75,7 @@ const WithLabelTemplate: StoryFn<typeof TextFieldInput> = (args: unknown) => ({
       <FormLabel for="input">Name</FormLabel>
       <TextFieldRoot>
         <TextFieldSlot>
-          <Icon icon="ph:user" />
+          <Icon icon="lucide:user-round" />
         </TextFieldSlot>
         <TextFieldInput v-bind="args" id="input" type="text" /> 
       </TextFieldRoot>

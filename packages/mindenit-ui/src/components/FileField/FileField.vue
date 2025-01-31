@@ -53,7 +53,7 @@ const { isOverDropZone } = useDropZone(elementRef, {
 		for="file-trigger"
 		:data-hovered="isOverDropZone"
 	>
-		<Icon class="size-8 text-fiord-500 dark:text-fiord-400" icon="ph:cloud-arrow-up" />
+		<Icon class="size-8 text-fiord-500 dark:text-fiord-400" icon="lucide:cloud-upload" />
 		<div class="flex flex-col gap-1 text-center">
 			<h5 v-if="title" class="text-sm text-black dark:text-white">{{ title }}</h5>
 			<p v-if="description" class="text-xs text-fiord-500">{{ description }}</p>

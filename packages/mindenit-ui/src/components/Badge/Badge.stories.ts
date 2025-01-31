@@ -33,6 +33,7 @@ const Template: StoryFn<typeof Badge> = (args: unknown) => ({
 type Story = StoryObj
 
 export const Default: Story = Template.bind({})
+
 Default.args = {
 	default: 'Badge',
 }
@@ -45,7 +46,7 @@ export const WithIcon: Story = {
 		slots: {
 			default: {
 				components: { Icon },
-				template: '<Icon icon="ph:lightning-fill" /> Badge',
+				template: '<Icon icon="lucide:zap" /> Badge',
 			},
 		},
 	},

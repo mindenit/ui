@@ -6,7 +6,7 @@ const meta = {
 	component: IconButton,
 	tags: ['autodocs'],
 	args: {
-		icon: 'ph:plus'
+		icon: 'lucide:plus'
 	},
 	argTypes: {
 		variant: {

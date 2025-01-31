@@ -24,7 +24,7 @@ const forwarded = useForwardProps(props)
 			class="inline-flex size-5 items-center justify-center rounded-full border border-fiord-200 bg-white text-xs font-medium group-data-[state=completed]:border-0 group-data-[state=active]:border-royal-blue-600 group-data-[state=active]:bg-royal-blue-500 group-data-[state=completed]:bg-christi-500 group-data-[state=active]:text-white group-data-[state=completed]:text-white group-data-[state=inactive]:text-fiord-600 dark:border-fiord-700 dark:bg-fiord-950 dark:group-data-[state=active]:border-royal-blue-400 dark:group-data-[state=inactive]:text-fiord-400"
 		>
 			<StepperIndicator class="select-none" as="span">
-				<Icon v-if="completed" icon="ph:check-bold" />
+				<Icon v-if="completed" icon="lucide:check" />
 				<template v-else>
 					{{ step }}
 				</template>
@@ -38,7 +38,7 @@ const forwarded = useForwardProps(props)
 		<Icon
 			v-if="step !== steps"
 			class="ml-3 hidden text-fiord-600 group-data-[orientation=horizontal]:block dark:text-fiord-400"
-			icon="ph:caret-right-bold"
+			icon="lucide:chevron-right"
 		/>
 	</StepperItem>
 </template>

@@ -27,12 +27,12 @@ const forwarded = useForwardPropsEmits(props, emits)
 			<PaginationFirst
 				class="flex size-8 items-center justify-center rounded-lg hover:bg-fiord-300 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent dark:text-fiord-400 dark:hover:bg-fiord-800 dark:disabled:bg-transparent"
 			>
-				<Icon icon="ph:caret-double-left" />
+				<Icon icon="lucide:chevrons-left" />
 			</PaginationFirst>
 			<PaginationPrev
 				class="flex size-8 items-center justify-center rounded-lg hover:bg-fiord-300 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent dark:text-fiord-400 dark:hover:bg-fiord-800 dark:disabled:bg-transparent"
 			>
-				<Icon icon="ph:caret-left" />
+				<Icon icon="lucide:chevron-left" />
 			</PaginationPrev>
 			<template v-for="(page, index) in items">
 				<PaginationListItem
@@ -55,12 +55,12 @@ const forwarded = useForwardPropsEmits(props, emits)
 			<PaginationNext
 				class="flex size-8 items-center justify-center rounded-lg hover:bg-fiord-300 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent dark:text-fiord-400 dark:hover:bg-fiord-800 dark:disabled:bg-transparent"
 			>
-				<Icon icon="ph:caret-right" />
+				<Icon icon="lucide:chevron-right" />
 			</PaginationNext>
 			<PaginationLast
 				class="flex size-8 items-center justify-center rounded-lg hover:bg-fiord-300 disabled:cursor-not-allowed disabled:opacity-50 disabled:hover:bg-transparent dark:text-fiord-400 dark:hover:bg-fiord-800 dark:disabled:bg-transparent"
 			>
-				<Icon icon="ph:caret-double-right" />
+				<Icon icon="lucide:chevrons-right" />
 			</PaginationLast>
 		</PaginationList>
 	</PaginationRoot>

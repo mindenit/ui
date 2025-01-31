@@ -44,7 +44,7 @@ const forwarded = useForwardPropsEmits(props, emits)
 			>
 				<TagsInputItemText />
 				<TagsInputItemDelete as-child>
-					<IconButton icon="ph:x" variant="ghost" size="xs" class="size-4 [&_svg]:size-3" />
+					<IconButton icon="lucide:x" variant="ghost" size="xs" class="size-4 [&_svg]:size-3" />
 				</TagsInputItemDelete>
 			</TagsInputItem>
 		</div>
