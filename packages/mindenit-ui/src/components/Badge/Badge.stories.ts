@@ -12,6 +12,11 @@ const meta = {
 			options: ['default', 'primary', 'success', 'danger'],
 			defaultValue: 'default',
 		},
+		variant: {
+			control: { type: 'select' },
+			options: ['solid', 'outlined'],
+			defaultValue: 'outlined',
+		},
 		default: {
 			control: 'text',
 			description: 'Slot content',

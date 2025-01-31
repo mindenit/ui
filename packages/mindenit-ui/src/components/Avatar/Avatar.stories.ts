@@ -1,5 +1,6 @@
 import type { Meta, StoryFn, StoryObj } from '@storybook/vue3'
-import { Avatar, AvatarProps } from '.'
+import type { AvatarProps } from '.';
+import { Avatar } from '.'
 
 const meta = {
 	title: 'Base/Avatar',
