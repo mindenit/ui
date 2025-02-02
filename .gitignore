@@ -21,3 +21,4 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+packages/mindenit-ui/.storybook/index.css
