@@ -24,13 +24,13 @@ const forwarded = useForwardProps(props)
 			>
 				<slot name="title" />
 				<Icon
-					icon="ph:plus"
+					icon="lucide:plus"
 					class="size-5 transition-transform group-data-[state=open]:rotate-45"
 				/>
 			</AccordionTrigger>
 		</AccordionHeader>
 		<AccordionContent
-			class="box-border overflow-hidden bg-fiord-200 text-fiord-800 data-[state=closed]:animate-slideUp data-[state=open]:animate-slideDown dark:bg-fiord-800 dark:text-fiord-200"
+			class="box-border overflow-hidden bg-fiord-200 text-fiord-800 data-[state=closed]:animate-slide-up data-[state=open]:animate-slide-down dark:bg-fiord-800 dark:text-fiord-200"
 		>
 			<div class="px-3 pb-3 pt-2">
 				<slot name="content" />

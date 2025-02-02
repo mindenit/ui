@@ -40,8 +40,8 @@ const TemplateWithIcons: StoryFn<typeof TabMenuRoot> = (args: unknown) => ({
 	},
 	template: `<TabMenuRoot v-bind="args">
 		<TabMenuList>
-			<TabMenuTrigger value="tab1"><Icon icon="ph:plus" /> Tab 1</TabMenuTrigger>
-			<TabMenuTrigger value="tab2"><Icon icon="ph:plus" /> Tab 2</TabMenuTrigger>
+			<TabMenuTrigger value="tab1"><Icon icon="lucide:plus" /> Tab 1</TabMenuTrigger>
+			<TabMenuTrigger value="tab2"><Icon icon="lucide:plus" /> Tab 2</TabMenuTrigger>
 		</TabMenuList>
 		<TabMenuContent value="tab1">Content 1</TabMenuContent>
 		<TabMenuContent value="tab2">Content 2</TabMenuContent>

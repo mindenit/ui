@@ -44,10 +44,10 @@ const TemplateWithIcons: StoryFn<typeof ToggleGroupRoot> = (args: unknown) => ({
 	template: `
     <ToggleGroupRoot v-bind="args">
       <ToggleGroupItem value="item-1">
-        <Icon icon="ph:pencil" />
+        <Icon icon="lucide:pencil" />
       </ToggleGroupItem>
       <ToggleGroupItem value="item-2">
-        <Icon icon="ph:eye" />
+        <Icon icon="lucide:eye" />
       </ToggleGroupItem>
     </ToggleGroupRoot>
   `,

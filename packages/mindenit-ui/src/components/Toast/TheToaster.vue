@@ -17,11 +17,11 @@ import {
 const { toasts } = useToast()
 
 const iconsMap = new Map<ToastVariants['variant'], string>([
-	['error', 'ph:warning-circle-fill'],
-	['feature', 'ph:magic-wand-fill'],
-	['info', 'ph:info-fill'],
-	['success', 'ph:check-circle-fill'],
-	['warning', 'ph:warning-fill'],
+	['error', 'lucide:circle-alert'],
+	['feature', 'lucide:wand-sparkles'],
+	['info', 'lucide:info'],
+	['success', 'lucide:circle-check'],
+	['warning', 'lucide:triangle-alert'],
 ])
 </script>
 

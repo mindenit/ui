@@ -9,10 +9,13 @@ const props = defineProps<{
 	modelValue?: string
 	defaultValue?: string
 }>()
+
 const emits = defineEmits<{
 	'update:modelValue': [payload: string]
 }>()
+
 const element = ref<HTMLInputElement | null>(null)
+
 const modelValue = useVModel(props, 'modelValue', emits, {
 	passive: true,
 	defaultValue: props.defaultValue,
@@ -29,13 +32,13 @@ const handleReset = () => {
 <template>
 	<TextFieldRoot>
 		<TextFieldSlot>
-			<Icon icon="ph:magnifying-glass" />
+			<Icon icon="lucide:search" />
 		</TextFieldSlot>
 		<TextFieldInput v-bind="$attrs" id="search" ref="element" v-model="modelValue" type="search" />
 		<TextFieldSlot>
 			<IconButton
 				v-if="modelValue?.length"
-				icon="ph:x"
+				icon="lucide:x"
 				variant="ghost"
 				size="sm"
 				@click="handleReset"

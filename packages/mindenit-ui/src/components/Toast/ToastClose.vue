@@ -27,6 +27,6 @@ const delegatedProps = computed(() => {
 			)
 		"
 	>
-		<Icon icon="ph:x" class="size-4" />
+		<Icon icon="lucide:x" class="size-4" />
 	</ToastClose>
 </template>

@@ -35,7 +35,7 @@ defineProps<DialogHeaderProps>()
 		</div>
 		<DialogClose>
 			<Button variant="ghost" appearance="icon" class="size-7 [&_svg]:size-4">
-				<Icon icon="ph:x" />
+				<Icon icon="lucide:x" />
 			</Button>
 		</DialogClose>
 	</header>

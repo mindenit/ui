@@ -41,7 +41,7 @@ const value = ref(props.progress)
 						<p class="text-xs text-fiord-500 dark:text-fiord-400">{{ description }}</p>
 						<div class="ml-2 inline-flex items-center gap-1">
 							<template v-if="isUploaded">
-								<Icon class="size-4 text-christi-500" icon="ph:check-circle-fill" />
+								<Icon class="size-4 text-christi-500" icon="lucide:circle-check" />
 								<p class="text-xs text-black dark:text-white">{{ completedFallback }}</p>
 							</template>
 							<template v-else>
@@ -54,12 +54,12 @@ const value = ref(props.progress)
 			</div>
 			<IconButton
 				v-if="isUploaded"
-				icon="ph:trash"
+				icon="lucide:trash-2"
 				variant="ghost"
 				size="sm"
 				@click="$emit('remove')"
 			/>
-			<IconButton v-else icon="ph:x" variant="ghost" size="sm" @click="$emit('cancel')" />
+			<IconButton v-else icon="lucide:x" variant="ghost" size="sm" @click="$emit('cancel')" />
 		</div>
 		<ProgressBar v-if="!isUploaded" v-model="value" class="w-full" :max="100" />
 	</div>

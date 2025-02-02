@@ -71,7 +71,7 @@ const handlePreset = (value: AcceptableValue) => {
 	<PopoverRoot>
 		<PopoverTrigger as-child>
 			<Button :class="cn('w-[280px] justify-start')" variant="outlined">
-				<Icon icon="ph:calendar-dots" />
+				<Icon icon="lucide:calendar-days" />
 				{{ btnFallback }}
 			</Button>
 		</PopoverTrigger>
@@ -103,7 +103,7 @@ const handlePreset = (value: AcceptableValue) => {
 						<CalendarPrev as-child>
 							<IconButton
 								class="size-6 bg-white dark:bg-fiord-950 [&_svg]:size-4"
-								icon="ph:caret-left"
+								icon="lucide:chevron-left"
 								variant="ghost"
 								size="xs"
 							/>
@@ -112,7 +112,7 @@ const handlePreset = (value: AcceptableValue) => {
 						<CalendarNext as-child>
 							<IconButton
 								class="size-6 bg-white dark:bg-fiord-950 [&_svg]:size-4"
-								icon="ph:caret-right"
+								icon="lucide:chevron-right"
 								variant="ghost"
 								size="xs"
 							/>
