@@ -11,10 +11,10 @@ export default meta
 type Story = StoryObj<typeof SelectRoot>
 
 export const Default: Story = {
-	render: (args) => ({
+	render: args => ({
 		components: { SelectRoot, SelectContent, SelectItem, SelectTrigger },
-    setup: () => ({ args }),
-    template: `
+		setup: () => ({ args }),
+		template: `
       <SelectRoot>
         <SelectTrigger placeholder="Select a fruit..." />
         <SelectContent>
@@ -23,6 +23,21 @@ export const Default: Story = {
           <SelectItem value="apple">Apple</SelectItem>
         </SelectContent>
       </SelectRoot>
-    `
+    `,
+	}),
+}
+
+export const WithManyItems: Story = {
+	render: args => ({
+		components: { SelectRoot, SelectContent, SelectItem, SelectTrigger },
+		setup: () => ({ args }),
+		template: `
+      <SelectRoot>
+        <SelectTrigger placeholder="Select a fruit..." />
+        <SelectContent>
+          <SelectItem v-for="i in 100" :key="i" :value="i.toString()">Item {{ i }}</SelectItem>
+        </SelectContent>
+      </SelectRoot>
+    `,
 	}),
 }

@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div>
-    <UButton>12</UButton>
-  </div>
+	<div>
+		<UButton>12</UButton>
+	</div>
 </template>
