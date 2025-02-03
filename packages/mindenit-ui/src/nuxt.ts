@@ -1,5 +1,5 @@
 import type { } from '@nuxt/schema' // Mandatory to avoid a bug when building
-import { addComponent, addVitePlugin, defineNuxtModule } from '@nuxt/kit'
+import { addComponent, addImports, addVitePlugin, defineNuxtModule } from '@nuxt/kit'
 
 import { components } from './constants/components'
 
@@ -22,8 +22,7 @@ export default defineNuxtModule<ModuleOptions>({
     if (nuxt.options.builder === '@nuxt/vite-builder') {
       const Tailwind = await import('@tailwindcss/vite').then(r => r.default)
       addVitePlugin(Tailwind())
-    }
-    else {
+    } else {
       nuxt.options.postcss.plugins['@tailwindcss/postcss'] = {}
     }
 
@@ -34,5 +33,10 @@ export default defineNuxtModule<ModuleOptions>({
         filePath: '@mindenit/ui',
       })
     }
+
+    addImports([
+      { from: '@mindenit/ui', name: 'buttonVariants' },
+      { from: '@mindenit/ui', name: 'iconButtonVariants' },
+    ])
   },
 })
