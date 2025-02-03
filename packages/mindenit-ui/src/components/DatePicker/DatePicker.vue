@@ -1,11 +1,10 @@
 <script lang="ts" setup>
+import { Icon } from '@iconify/vue'
+import { DateFormatter, type DateValue, getLocalTimeZone, today } from '@internationalized/date'
 import type {
 	AcceptableValue,
 	CalendarRootEmits,
 } from 'reka-ui'
-import type { DatePickerProps } from './index.ts'
-import { Icon } from '@iconify/vue'
-import { DateFormatter, type DateValue, getLocalTimeZone, today } from '@internationalized/date'
 import {
 	CalendarCell,
 	CalendarCellTrigger,
@@ -30,6 +29,7 @@ import { cn } from '../../utils'
 import { Button } from '../Button'
 import { IconButton } from '../IconButton'
 import { SelectContent, SelectItem, SelectRoot, SelectTrigger } from '../Select'
+import type { DatePickerProps } from './index.ts'
 
 const props = withDefaults(defineProps<DatePickerProps>(), {
 	placeholder: 'Pick a date',
@@ -37,11 +37,11 @@ const props = withDefaults(defineProps<DatePickerProps>(), {
 	presetsPlaceholder: 'Select preset',
 })
 
-const df = new DateFormatter(props.locale, {
-  dateStyle: 'long',
-})
-
 const emits = defineEmits<CalendarRootEmits>()
+
+const df = new DateFormatter(props.locale, {
+	dateStyle: 'long',
+})
 
 const delegatedProps = computed(() => {
 	const { placeholder, ...delegated } = props

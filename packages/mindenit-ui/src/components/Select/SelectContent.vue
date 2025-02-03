@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import type { HTMLAttributes } from 'vue'
 import {
 	SelectContent,
 	type SelectContentEmits,
 	type SelectContentProps,
 	SelectPortal,
 	useForwardPropsEmits,
-} from 'reka-ui'
-import { cn } from '../../utils'
+} from 'reka-ui';
+import type { HTMLAttributes } from 'vue';
+import { cn } from '../../utils';
 
 interface Props extends Omit<SelectContentProps, 'align' | 'side' | 'sideOffset' | 'position'> {
 	class?: HTMLAttributes['class']

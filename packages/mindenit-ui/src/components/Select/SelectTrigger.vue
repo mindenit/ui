@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Icon } from '@iconify/vue/dist/iconify.js';
+import { Icon } from '@iconify/vue';
 import { SelectTrigger, type SelectTriggerProps, SelectValue } from 'reka-ui';
 
 const props = defineProps<SelectTriggerProps & { placeholder: string }>()
