@@ -81,4 +81,12 @@ export const components = [
 	'DropdownSubContent',
 	'DropdownSubTrigger',
 	'DropdownTrigger',
+	'Table',
+	'TableBody',
+	'TableCaption',
+	'TableCell',
+	'TableFooter',
+	'TableHead',
+	'TableHeader',
+	'TableRow',
 ]
