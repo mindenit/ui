@@ -1,1 +1,2 @@
-# `@mindenit/ui`
+# Mindenit UI
+

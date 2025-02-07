@@ -1,0 +1,9 @@
+.dark {
+  body {
+    background: oklch(17.13% 0.0362 269.5);
+  }
+}
+
+body {
+  background: #fff;
+}
