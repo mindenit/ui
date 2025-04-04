@@ -28,7 +28,6 @@ export { TagsField } from './TagsField'
 export { Text } from './Text'
 export { TextAreaInput, TextAreaRoot } from './TextArea'
 export { TextFieldInput, TextFieldRoot, TextFieldSlot } from './TextField'
-export { Toast, ToastAction, ToastClose, ToastDescription, Toaster, ToastProvider, ToastTitle, ToastViewport } from './Toast'
+export { Toast, ToastAction, ToastClose, ToastDescription, Toaster, ToastProvider, ToastTitle, ToastViewport, useToast } from './Toast'
 export { ToggleGroupItem, ToggleGroupRoot } from './ToggleGroup'
 export { TooltipContent, TooltipProvider, TooltipRoot, TooltipTrigger } from './Tooltip'
-

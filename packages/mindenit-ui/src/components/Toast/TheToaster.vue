@@ -30,7 +30,7 @@ const iconsMap = new Map<ToastVariants['variant'], string>([
 		<Toast
 			v-for="toast in toasts"
 			:key="toast.id"
-			class="flex flex-row items-start justify-start gap-3"
+			class="flex flex-row items-start justify-start gap-3 dark:bg-fiord-900 bg-fiord-50 border-fiord-300 dark:border-fiord-700 z-[100] data-[state=open]:animate-fade-in data-[state=closed]:animate-fade-out"
 			v-bind="toast"
 		>
 			<Icon class="size-5" :icon="iconsMap.get(toast.variant) as string" />
